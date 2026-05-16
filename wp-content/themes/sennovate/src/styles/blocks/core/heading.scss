@@ -1,0 +1,18 @@
+.is-style-eyebrow-heading {
+	position: relative;
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: var(--wp--custom--font-weight--medium);
+	text-transform: capitalize;
+
+	&::before {
+		position: relative;
+		top: -4px;
+		display: inline-block;
+		width: 25px;
+		height: 2px;
+		margin-right: 10px;
+		transform: translate(0, -50%);
+		background: currentColor; //Current Color update
+		content: '';
+	}
+}

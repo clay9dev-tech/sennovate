@@ -1,0 +1,28 @@
+{
+	"name": "skeletor-customize-palette",
+	"version": "1.0.8",
+	"description": "Customizer interface for the Skeletor Abstract Palette",
+	"main": "index.js",
+	"homepage": "https://bitbucket.org/madebymandy/skeletor-customize-palette#readme",
+	"bugs": {
+		"url": "https://bitbucket.org/madebymandy/skeletor-customize-palette/issues"
+	},
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@bitbucket.org/madebymandy/skeletor-customize-palette.git"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"plugin_data": {
+		"title": "Skeletor Custom Palette",
+		"author": "Mandy",
+		"author_profile": "https://mandydesign.com",
+		"download_url": "https://bitbucket.org/madebymandy/skeletor-customize-palette/get/master.zip",
+		"tested": "6.3.1",
+		"requires": "5.9.0",
+		"requires_php": "8.0",
+		"last_updated": "2023-10-24 16:20:00"
+	}
+}

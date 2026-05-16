@@ -1,0 +1,47 @@
+ul {
+	.main & {
+		margin-top: 1rem;
+		padding: 0;
+
+		li {
+			position: relative;
+			padding-left: 30px;
+			list-style-type: none;
+			font-size: 18px;
+			line-height: 150%;
+
+			@include respond-to($medium, max) {
+				font-size: 14px;
+			}
+
+			&::before {
+				position: absolute;
+				top: 6px;
+				left: 0;
+				background-image: url('../images/check-list.svg');
+				background-repeat: no-repeat;
+				background-position: center center;
+				content: '';
+				@include square(20px);
+
+				@include respond-to($medium, max) {
+					@include square(15px);
+					background-size: 15px;
+				}
+			}
+		}
+	}
+}
+
+// Orders Lists
+
+ol {
+	.main & {
+		margin-top: 1rem;
+		padding-left: 1rem;
+
+		li {
+			padding-left: 0.5rem;
+		}
+	}
+}

@@ -1,0 +1,330 @@
+@use 'sass:math';
+/*   Core Typography
+--------------------------------------------------------------------------  */
+
+:where(a) {
+	color: color('link');
+	transition: color 0.2s ease-in-out;
+
+	&:hover {
+		color: color('link-hover');
+	}
+
+	&[href='#'] {
+		cursor: default;
+	}
+}
+
+.wp-image-link {
+	text-decoration: none;
+}
+
+// Heading styles are set as default CSS tags, but also:
+// .h{level} create .h1, .h2, .h3 etc so we can use these classnames in the block editor to manually override heading sizes in proper DOM order with higher-level sizes
+// %h{level} so we can effieciently extend these styles in other stylesheets & block patterns (@extend h{level})
+
+:where(h1),
+%h1,
+.h1 {
+	font-family: family('heading');
+	font-size: 44px;
+	font-weight: 700;
+	letter-spacing: -0.55px;
+	line-height: math.div(48, 44);
+}
+
+:where(h2),
+%h2,
+.h2 {
+	font-family: family('heading');
+	font-size: 32px;
+	font-weight: 700;
+	letter-spacing: -0.55px;
+	line-height: math.div(32, 24);
+}
+
+:where(h3),
+%h3,
+.h3 {
+	font-family: family('heading');
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: -0.25px;
+	line-height: math.div(32, 24);
+}
+
+:where(h4),
+%h4,
+.h4 {
+	font-family: family('heading');
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: -0.44px;
+	line-height: math.div(34, 20);
+}
+
+:where(h5),
+%h5,
+.h5 {
+	font-family: family('heading');
+	font-size: 18px;
+	font-weight: 700;
+	line-height: math.div(33, 22);
+}
+
+:where(h6),
+%h6,
+.h6 {
+	font-family: family('heading');
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	line-height: math.div(20, 18);
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+	color: color(heading);
+}
+
+p,
+pre,
+address,
+code,
+ul,
+ol,
+dt,
+dd {
+	font-size: var(--wp--preset--font-size--medium);
+	line-height: math.div(24, 16);
+}
+
+ul {
+	padding-left: 11px;
+	list-style-type: '•';
+	list-style-position: outside;
+
+	li {
+		padding-left: 19px;
+	}
+}
+
+ol,
+ul {
+	li {
+		+ li {
+			margin-top: 1em;
+		}
+	}
+}
+
+// Paragraphs and emphasis
+
+p {
+	&:empty {
+		display: none;
+	}
+}
+
+blockquote {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	font-style: normal;
+	gap: 1em;
+
+	p {
+		margin: 0;
+		font-size: var(--wp--preset--font-size--x-large);
+	}
+
+	cite {
+		display: block;
+		width: 100%;
+		font-size: var(--wp--preset--font-size--medium);
+	}
+}
+
+code,
+pre {
+	font-family: family(mono);
+}
+
+pre {
+	margin: 1em 0 0;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+sub {
+	position: relative;
+	bottom: -0.25em;
+	vertical-align: baseline;
+	font-size: 75%;
+	line-height: 0;
+}
+
+sup {
+	position: relative;
+	top: -0.5em;
+	vertical-align: baseline;
+	font-size: 75%;
+	line-height: 0;
+}
+
+abbr {
+	cursor: help;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 0 1em;
+}
+
+// Images
+
+img,
+img[class*='align'],
+img[class*='wp-image-'] {
+	max-width: 100%;
+	height: auto;
+	border-width: 0;
+	border-style: solid;
+}
+
+figcaption {
+	display: flex;
+	align-items: center;
+	margin-top: 1em;
+	color: color(heading);
+	font-size: 14px;
+	font-weight: 700;
+
+	&::after {
+		display: inline-block;
+		width: 42px;
+		height: 2px;
+		margin-left: 1em;
+		background-color: color(border);
+		content: '';
+
+		@include respond-to('small', 'max') {
+			display: none;
+		}
+	}
+}
+
+figure {
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+}
+
+// Miscellaneous
+
+.entry-oembed {
+	position: relative;
+	max-width: 100%;
+	height: auto;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.is-style-dark {
+	@include dark-mode;
+}
+
+@mixin hidden-element-notification {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		z-index: 5;
+		display: block;
+		opacity: 50%;
+		background: repeating-linear-gradient(45deg,
+		rgba(255,255,255, 0.5),
+		rgba(255,255,255, 0.5) 32px,
+		#141414 32px,
+		#141414 36px);
+		content: '';
+		inset: 0;
+	}
+
+	&::after {
+		position: absolute;
+		z-index: 10;
+		top: 50%;
+		left: 50%;
+		display: block;
+		padding: 0.5em 1em;
+		transform: translate(-50%, -50%);
+		border: 3px dashed #141414;
+		background-color: #FFFFFF;
+		color: #141414;
+		font-weight: bold;
+		content: '';
+	}
+}
+
+.hide-on-mobile {
+	&:not(.block-editor-block-list__block) {
+		@include respond-to($column_stack_breakpoint - 1px, max) {
+			@include screen-reader-text;
+		}
+	}
+
+	&.block-editor-block-list__block {
+		@include respond-to($column_stack_breakpoint - 1px, max) {
+			@include hidden-element-notification();
+
+			&::after {
+				content: 'Hidden on mobile - visible here for reference.';
+			}
+		}
+	}
+}
+
+.hide-on-desktop {
+	&:not(.block-editor-block-list__block) {
+		@include respond-to($column_stack_breakpoint) {
+			@include screen-reader-text;
+		}
+	}
+
+	&.block-editor-block-list__block:not(.is-selected) {
+		@include respond-to($column_stack_breakpoint) {
+			@include hidden-element-notification();
+
+			&::after {
+				content: 'Hidden on desktop - visible here for reference.';
+			}
+		}
+	}
+}
+
+.position-relative {
+	position: relative;
+}
+
+/* stylelint-disable selector-no-qualifying-type */
+
+a.cover-link::before,
+.wp-block-button.cover-link .wp-block-button__link::before {
+	@include coverer;
+	display: block;
+	content: '';
+}
+/* stylelint-enable selector-no-qualifying-type */

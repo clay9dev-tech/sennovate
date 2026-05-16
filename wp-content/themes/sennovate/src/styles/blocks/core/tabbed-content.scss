@@ -1,0 +1,148 @@
+//stylelint-disable all
+.wp-block-mandy-tabbed-content {
+	display: inline-block;
+    width: 100%;
+	padding-top: 60px;
+    text-align: center;
+}
+.tabbed-content__tabs {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	border-bottom: 2px solid #CED2D6;
+    gap: 40px;
+
+	.tabbed-content__tab {
+		position: relative;
+		padding-bottom: 20px;
+		border: none;
+		box-shadow: none;
+		background: no-repeat;
+		font-size: 1rem;
+    	font-weight: var(--wp--custom--font-weight--semibold);
+		cursor: pointer;
+		display: flex;
+    	align-items: center;
+		color: #596066;
+
+		@include respond-to($medium, max) {
+			font-size: 13px;
+			text-align: left;
+		}
+
+		&:hover {
+			&::after {
+				position: absolute;
+				bottom: -2px;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background-color: var(--wp--preset--color--light-orange);
+				content: '';
+			}
+		}
+		&.active
+		{
+			color: 	var(--wp--preset--color--light-orange) !important;
+
+			&::after {
+				position: absolute;
+				bottom: -2px;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background-color: var(--wp--preset--color--light-orange);
+				content: '';
+			}
+		}
+	}
+}
+
+.tabbed-content__content {
+	padding: 60px 0;
+	text-align: initial;
+
+	@include respond-to($medium, max) {
+		padding-top: 2rem;
+	}
+}
+
+.revenue-platform-tab {
+	.tabbed-content__tabs {
+		@include respond-to($large, max) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			border-bottom: none;
+		}
+		.tabbed-content__tab {
+			&::before {
+				@include square(24px);
+				background-size: cover;
+				background-position: center;
+				content: '';
+				display: inline-block;
+				margin-right: 8px;
+				background-repeat: no-repeat;
+			}
+		}
+		.tabbed-content__tab:first-child {
+			background-image: url('../images/tv-stand-grey.svg');
+		}
+		.tabbed-content__tab.active:first-child {
+			background-image: url('../images/tv-stand-org.svg');
+		}
+		.tabbed-content__tab:nth-child(2) {
+			background-image: url('../images/research-grey.svg');
+		}
+		.tabbed-content__tab.active:nth-child(2) {
+			background-image: url('../images/research-org.svg');
+		}
+		.tabbed-content__tab:nth-child(3) {
+			background-image: url('../images/keyboard-grey.svg');
+		}
+		.tabbed-content__tab.active:nth-child(3) {
+			background-image: url('../images/keyboard-org.svg');
+		}
+		.tabbed-content__tab:nth-child(4) {
+			background-image: url('../images/note-grey.svg');
+		}
+		.tabbed-content__tab.active:nth-child(4) {
+			background-image: url('../images/note-org.svg');
+		}
+	}
+	@include respond-to($large, max) {
+		.wp-block-mandy-tabbed-content--tab {
+			.wp-block-columns{
+				flex-direction: column !important;
+			}
+		}
+	}
+}
+
+.event-detail-tabbed {
+	.tabbed-content__tabs {
+		.tabbed-content__tab {
+			color: #9EA5AD;
+
+			&::before {
+				@include square(24px);
+				background-size: cover;
+				background-position: center;
+				content: '';
+				display: inline-block;
+				margin-right: 8px;
+				background-repeat: no-repeat;
+			}
+		}
+		.tabbed-content__tab {
+			background-image: url('../images/note-alt.svg');
+		}
+		.tabbed-content__tab.active {
+			background-image: url('../images/note-alt-active.svg');
+		}
+	}
+
+	.wp-block-heading span {
+		color: var(--wp--preset--color--light-orange);
+	}
+}

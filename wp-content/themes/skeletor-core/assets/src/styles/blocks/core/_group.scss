@@ -1,0 +1,15 @@
+.wp-block-group {
+	padding: 0.05px var(--wp--custom--gutter-width--page);
+}
+
+.is-style-container-a {
+	background-color: color('border');
+}
+
+.is-style-container-b {
+	background-color: color('shaded-bg');
+}
+
+.is-style-container-c {
+	background-image: linear-gradient(45deg, color('shaded-bg'), color('border'));
+}

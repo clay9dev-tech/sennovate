@@ -1,0 +1,29 @@
+.header {
+	position: fixed;
+	top: var(--admin-bar-height);
+
+	&.headroom--unpinned {
+		transform: translateY(-100%);
+
+		@at-root .nav-open & {
+			transform: translateY(0);
+		}
+
+		@include respond-to('navigation') {
+			.home-link-wrapper {
+				transform: translateY(0);
+			}
+		}
+	}
+
+	&.headroom--pinned,
+	&.headroom--top {
+		transform: translateY(0);
+
+		@include respond-to('navigation') {
+			.home-link-wrapper {
+				transform: translateY(18px);
+			}
+		}
+	}
+}

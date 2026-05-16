@@ -1,0 +1,24 @@
+.footer {
+	.footer-content {
+		padding: var(--wp--custom--gutter-width--page);
+		background-color: color('shaded-bg');
+	}
+
+	.footer-menu-wrapper {
+		max-width: var(--wp--custom--container-width--xwide);
+		margin-inline: auto;
+	}
+
+	.footer-menu,
+	.sub-menu,
+	.menu {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.footer-copyright {
+		padding: var(--wp--preset--spacing--tiny) var(--wp--custom--gutter-width--page);
+		text-align: center;
+	}
+}

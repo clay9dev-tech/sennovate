@@ -1,0 +1,22 @@
+.header.header-default {
+	background-color: color('body-bg');
+	color: color('body');
+
+	.sub-menu {
+		background-color: color('body-bg');
+	}
+
+	@include respond-to('navigation') {
+		&.headroom--top {
+			background-color: transparent;
+
+			&.dark-background {
+				color: color('body-bg');
+
+				.sub-menu {
+					color: color('body');
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+.customize-variable-color-input-wrapper {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+	gap: 8px;
+}
+
+.customize-variable-color-sample {
+	flex-basis: 25%;
+	border-radius: 4px;
+}
+
+.customize-variable-color-input {
+	width: 0;
+	height: 0;
+	appearance: none;
+	border: 0;
+	clip-path: inset(0 0 0 100%);
+}

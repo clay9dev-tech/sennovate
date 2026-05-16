@@ -1,0 +1,46 @@
+<header id="header" class="header-default header">
+	{{# acq_announcement }}
+	<div class="header-announcement" role="region" aria-label="Acqueon Announcement">
+		<span class="announcement-content">{{{ . }}}</span>
+		<button class="announcement-close" aria-label="Close announcement">
+			<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M13.4928 1L1.49316 12.9996" stroke="white" stroke-width="1.49995" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M1.49316 1L13.4928 12.9996" stroke="white" stroke-width="1.49995" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</button>
+	</div>
+	{{/ acq_announcement }}
+	<div class="header-content">
+		<div class="logo-wrapper">
+			{{{ home_link }}}
+		</div>
+
+		<button id="main-menu-toggle" class="main-menu-toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle Main Menu">
+			{{{ toggle_icon }}}
+		</button>
+
+		<div class="menus">
+			{{> menu-main-menu }}
+		</div>
+
+		<div class="utility-menu-wrapper">
+			{{{ utility_menu }}}
+		</div>
+	</div>
+</header>
+<div class="search-body">
+	<div class="search-body-wrap">
+		<a href="javascript:void(0)" class="search-body-close">
+			close
+		</a>
+		<div class="search-form-wrap">
+			<form role="search" method="get" class="search-form" action="{{{site_link}}}">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Type your search" name="s" />
+				</label>
+				<button type="submit" class="search-submit">S</button>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,281 @@
+/*   Base Mixins
+	--------------------------------------------------------------------------  */
+@mixin dark-mode {
+	--wp--custom--colors--body: var(--wp--custom--colors--dark--body);
+	--wp--custom--colors--heading: var(--wp--custom--colors--dark--heading);
+	--wp--custom--colors--heading-em: var(--wp--custom--colors--dark--heading-em);
+	--wp--custom--colors--link: var(--wp--custom--colors--dark--link);
+	--wp--custom--colors--link-hover: var(--wp--custom--colors--dark--link-hover);
+	--wp--custom--colors--text-button: var(--wp--custom--colors--dark--text-button);
+	--wp--custom--colors--text-button-hover: var(--wp--custom--colors--dark--text-button-hover);
+	--wp--custom--colors--border: var(--wp--custom--colors--dark--border);
+	--wp--custom--colors--body-bg: var(--wp--custom--colors--dark--body-bg);
+	--wp--custom--colors--shaded-bg: var(--wp--custom--colors--dark--shaded-bg);
+	--wp--custom--colors--input-bg: var(--wp--custom--colors--dark--input-bg);
+	--wp--custom--colors--button: var(--wp--custom--colors--dark--button);
+	--wp--custom--colors--button-hover: var(--wp--custom--colors--dark--button-hover);
+	--wp--custom--colors--button-bg: var(--wp--custom--colors--dark--button-bg);
+	--wp--custom--colors--button-bg-hover: var(--wp--custom--colors--dark--button-bg-hover);
+
+	background-color: var(--wp--custom--colors--body-bg);
+	color: var(--wp--custom--colors--body);
+}
+
+@mixin soft-box-shadow {
+	box-shadow: 13px 18px 20px 0 rgba(0,0,0,0.16);
+}
+
+@mixin hard-box-shadow {
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.16);
+}
+
+@mixin side-padding() {
+	padding-inline: var(--wp--custom--gutter-width--page);
+}
+
+@mixin padding() {
+	padding: var(--wp--custom--gutter-width--page);
+}
+
+@mixin border ($border_color: color('border'), $border_width: 1px) {
+	border: $border_width solid $border_color;
+}
+
+/**
+ * Applies clearfix to element
+ */
+@mixin clearfix {
+	&::before,
+	&::after {
+		display: table;
+		content: ' ';
+	}
+
+	&::after {
+		clear: both;
+	}
+}
+
+/**
+ * Expands element to "cover" relative parent
+ */
+@mixin coverer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/**
+ * Applies font-smoothing
+ */
+@mixin font-smoothing {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/**
+ * Customizes browser scroll bars (does not work in all browsers)
+ * @author Hugo Giraudel
+ * @param {size} $size Horizontal scrollbar's height and vertical scrollbar's width
+ * @param {color} $foreground-color Scrollbar's color
+ * @param {color} $background-color [mix($foreground-color, white, 50%)] Scrollbar's color
+ */
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, #fff, 50%)) {
+	//scss-lint:disable PropertySpelling
+	// For Google Chrome
+
+	::-webkit-scrollbar {
+		width: $size;
+		height: $size;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: $foreground-color;
+	}
+
+	::-webkit-scrollbar-track {
+		background: $background-color;
+	}
+
+	// For Internet Explorer
+
+	body {
+		scrollbar-face-color: $foreground-color;
+		scrollbar-track-color: $background-color;
+	}
+}
+
+/**
+ * Positions element
+ * @param {position} $position Either `relative`, `absolute` or `fixed`
+ * @param {distance} $top Top offset
+ * @param {distance} $right Right offset
+ * @param {distance} $bottom Bottom offset
+ * @param {distance} $left Left offset
+ */
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+/**
+ * Absolute positioning
+ * @param {Arglist} $args - Offsets
+ * @require {mixin} position
+ */
+@mixin absolute($args...) {
+	@include position(absolute, $args...);
+}
+
+/**
+ * Relative positioning
+ * @param {Arglist} $args - Offsets
+ * @require {mixin} position
+ */
+@mixin relative($args...) {
+	@include position(relative, $args...);
+}
+
+/**
+ * Fixed positioning
+ * @param {Arglist} $args - Offsets
+ * @require {mixin} position
+ */
+@mixin fixed($args...) {
+	@include position(fixed, $args...);
+}
+
+/**
+ * Event Wrapper
+ * @author Harry Roberts
+ * @param {Bool} $self (false) - Whether or not to include current selector
+ * @see https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+ *
+ * Example Usage:
+ * .example {
+ *     text-decoration: none;
+ *
+ *     @include on-event {
+ *         text-decoration: underline;
+ *     }
+ * }
+ */
+@mixin on-event($self: false) {
+	@if $self {
+		&,
+		&:hover,
+		&:active,
+		&.active,
+		&:focus {
+			@content;
+		}
+	} @else {
+		&:hover,
+		&:active,
+		&.active,
+		&:focus {
+			@content;
+		}
+	}
+}
+
+/**
+ * Hides element accessibly
+ */
+@mixin screen-reader-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap;
+}
+
+/**
+ * Sets webkit tap highlight color
+ * @type {[type]}
+ */
+@mixin tap-color($color: transparent) {
+	//default: rgba(0, 0, 0, 0.4)
+	-webkit-tap-highlight-color: $color;
+}
+
+/**
+ * Convers Photoshop letter spacing value to EM
+ */
+@mixin ps-letter-spacing($val) {
+	letter-spacing: $val * 0.001em;
+}
+
+/**
+ * Sizes element to be square
+ */
+@mixin square($size) {
+	width: $size;
+	height: $size;
+}
+
+/**
+ * Sets form element placeholder text color
+ */
+@mixin placeholder($color) {
+	&::placeholder {
+		color: $color;
+	}
+}
+
+/**
+ * Builds media query with either a map or unit value
+ * @param {Mixed} $breakpoint - the value to break upon. Can be a mapped value or an applicable measurement (800px, et al)
+ * @param {String} $minmax ('min') - the polarity. should be 'min' or 'max'
+ * @param {Bool} $autoreduce (true) - Whether or not to reduce the breakpoint by 1px when using a mapped breakpoint AND max
+ * Example: @include respond-to(small)
+ * Example: @include respond-to(599px, 'max')
+ */
+@mixin respond-to($breakpoint, $minmax: 'min', $autoreduce: true) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		$value: map-get($breakpoints, $breakpoint);
+		@if $minmax == 'max' {
+			@if $autoreduce {
+				$value: $value - 1px;
+			}
+		}
+		@media screen and (#{$minmax}-width: #{$value}) {
+			@content;
+		}
+	} @else {
+		@media screen and (#{$minmax}-width: $breakpoint) {
+			@content;
+		}
+
+	}
+}
+
+/**
+ * Builds min/max media query for "in between" breakpoints
+ */
+@mixin respond-between($min, $max) {
+	@if (map-has-key($breakpoints, $min) and map-has-key($breakpoints, $max)) {
+		@media screen and (min-width: #{map-get($breakpoints, $min)}) and (max-width: #{map-get($breakpoints, $max)}) {
+			@content;
+		}
+	} @else if map-has-key($breakpoints, $min) {
+		@media screen and (min-width: #{map-get($breakpoints, $min)}) and (max-width: em($max)) {
+			@content;
+		}
+	} @else if map-has-key($breakpoints, $max) {
+		@media screen and (min-width: em($min)) and (max-width: #{map-get($breakpoints, $max)}) {
+			@content;
+		}
+	} @else {
+		@media screen and (min-width: #{$min}) and (max-width:#{$max}) {
+			@content;
+		}
+	}
+}

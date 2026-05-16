@@ -1,0 +1,296 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"color": {
+			"custom": true,
+			"gradients": [
+				{
+					"slug": "gradient-layer-3",
+					"gradient": "linear-gradient(to bottom, #ffffff 0%, #ffffff 10%, rgba(255,255,255,0.6) 18%, rgba(255,255,255,0) 25%), linear-gradient(to right, #eff1ff, #fff3ed)",
+					"name": "Gradient Layer 3"
+				},
+				{
+					"slug": "gradient-layer-4",
+					"gradient": "linear-gradient(to right, #fff3ed 0%, #eff1ff 100%)",
+					"name": "Gradient Layer 4"
+				},
+				{
+					"slug": "gradient-layer-5",
+					"gradient": "linear-gradient(180deg, #FFFBF9 0%, #FFF8F5 100%)",
+					"name": "Gradient Layer 5"
+				}
+			],
+			"palette": [
+				{
+					"name": "Primary Orange",
+					"slug": "light-orange",
+					"color": "#FF5811"
+				},
+				{
+					"name": "Primary Blue",
+					"slug": "light-blue",
+					"color": "#192A52"
+				},
+				{
+					"name": "Acqueon Secondary Orange",
+					"slug": "secondary-orange",
+					"color": "#E8500F"
+				},
+				{
+					"name": "Light Grey",
+					"slug": "light-grey",
+					"color": "#F7F8FA"
+				},
+				{
+					"name": "Whitish Gray",
+					"slug": "whitish-gray",
+					"color": "#f5f5f5"
+				},
+				{
+					"name": "White",
+					"slug": "white",
+					"color": "#FFFFFF"
+				},
+				{
+					"name": "Black",
+					"slug": "black",
+					"color": "#000000"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "1180px",
+			"wideSize": "1352px"
+		},
+		"spacing": {
+			"blockGap": true,
+			"margin": true,
+			"padding": true,
+			"spacingSizes": [
+				{
+					"name": "Small",
+					"slug": "30",
+					"size": "clamp(1.5rem, 1.308rem + 0.769vw, 2rem)"
+				},
+				{
+					"name": "Medium",
+					"slug": "40",
+					"size": "clamp(2rem, 1.808rem + 0.769vw, 2.5rem)"
+				},
+				{
+					"name": "Large",
+					"slug": "50",
+					"size": "clamp(2.5rem, 2.115rem + 1.538vw, 3.5rem)"
+				},
+				{
+					"name": "X-Large",
+					"slug": "60",
+					"size": "clamp(3.5rem, 3.115rem + 1.538vw, 4.5rem)"
+				},
+				{
+					"name": "XX-Large",
+					"slug": "70",
+					"size": "clamp(4.5rem, 4.308rem + 0.769vw, 5rem)"
+				},
+				{
+					"name": "XXX-Large",
+					"slug": "80",
+					"size": "clamp(5rem, 4.423rem + 2.308vw, 6.5rem)"
+				}
+			]
+		},
+		"typography": {
+			"fontStyle": true,
+			"fontWeight": false,
+			"letterSpacing": false,
+			"lineHeight": false,
+			"textColumns": false,
+			"textDecoration": true,
+			"textTransform": true,
+			"writingMode": false
+		},
+		"custom": {
+			"containerWidth": {
+				"xsmall": "500px",
+				"small": "760px",
+				"medium": "970px",
+				"wide": "1180px",
+				"xwide": "1352px"
+			},
+			"gutterWidth": {
+				"column": "clamp(24px, 4vw, 30px)",
+				"margin": "clamp(20px, 4vw, 30px)"
+			},
+			"fontWeight": {
+				"regular": "400",
+				"medium": "500",
+				"semibold": "600",
+				"bold": "700",
+				"extrabold": "800",
+				"black": "900"
+			},
+			"fonts": {
+				"base": "'Inter', sans-serif",
+				"primary": "'Satoshi-Variable', sans-serif",
+				"heading": "var(--wp--custom--fonts--primary)",
+				"display": "var(--wp--custom--fonts--base)"
+			}
+		},
+		"blocks": {
+			"core/heading": {
+				"typography": {
+					"fontSizes": [],
+					"fontWeight": true
+				}
+			},
+			"core/table": {
+				"typography": {
+					"fontSizes": []
+				}
+			},
+			"core/paragraph": {
+				"typography": {
+					"fluid": true,
+					"fontSizes": [
+						{
+							"slug": "xsmall",
+							"size": "11px",
+							"name": "XSmall",
+							"fluid": {
+								"min": "10px",
+								"max": "11px"
+							}
+						},
+						{
+							"slug": "small",
+							"size": "12px",
+							"name": "Small",
+							"fluid": {
+								"min": "10px",
+								"max": "12px"
+							}
+						},
+						{
+							"slug": "medium",
+							"size": "14px",
+							"name": "Medium",
+							"fluid": {
+								"min": "12px",
+								"max": "14px"
+							}
+						},
+						{
+							"slug": "large",
+							"size": "16px",
+							"name": "Large",
+							"fluid": {
+								"min": "14px",
+								"max": "16px"
+							}
+						},
+						{
+							"slug": "Xlarge",
+							"size": "18px",
+							"name": "XLarge",
+							"fluid": {
+								"min": "14px",
+								"max": "18px"
+							}
+						},
+						{
+							"slug": "XXlarge",
+							"size": "20px",
+							"name": "XXLarge",
+							"fluid": {
+								"min": "14px",
+								"max": "20px"
+							}
+						}
+					],
+					"fontWeight": true
+				}
+			}
+		}
+	},
+	"styles": {
+		"spacing": {
+			"blockGap": "30px"
+		},
+		"blocks": {
+			"core/paragraph": {
+				"typography": {
+					"fontWeight": "var(--wp--custom--font-weight--regular)"
+				}
+			},
+			"core/list-item": {
+				"typography": {
+					"fontWeight": "var(--wp--custom--font-weight--regular)",
+					"letterSpacing": "0.15px"
+				}
+			},
+			"core/button": {
+				"typography": {
+					"fontFamily": "var(--wp--custom--fonts--base)",
+					"fontSize": "16px"
+				}
+			}
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontFamily": "var(--wp--custom--fonts--primary)",
+					"fontWeight": "var(--wp--custom--font-weight--semibold)"
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "clamp(36px, 5vw, 58px)",
+					"letterSpacing": "-2px",
+					"lineHeight": "120%",
+					"fontWeight": "700"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "clamp(30px, 4vw, 46px)",
+					"letterSpacing": "-0.7px",
+					"lineHeight": "125%",
+					"fontWeight": "700"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "clamp(24px, 3vw, 32px)",
+					"letterSpacing": "-0.45px",
+					"lineHeight": "130%",
+					"fontWeight": "600"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontSize": "clamp(20px, 2.5vw, 28px)",
+					"letterSpacing": "-0.4px",
+					"lineHeight": "125%",
+					"fontWeight": "600"
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontSize": "clamp(18px, 2vw, 24px)",
+					"letterSpacing": "-0.3px",
+					"lineHeight": "125%",
+					"fontWeight": "600"
+				}
+			},
+			"h6": {
+				"typography": {
+					"fontSize": "clamp(16px, 1.5vw, 22px)",
+					"letterSpacing": "-0.3px",
+					"lineHeight": "125%",
+					"fontWeight": "600"
+				}
+			}
+		}
+	}
+}

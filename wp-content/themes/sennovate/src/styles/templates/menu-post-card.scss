@@ -1,0 +1,32 @@
+//stylelint-disable all
+.menu-post-card {
+	width: 100%;
+
+	.wp-block-image img {
+		border-radius: 10px;
+	}
+
+	.menu-post-type {
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 150%;
+	}
+
+	.menu-post-title {
+		margin: 6px 0;
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 150%;
+	}
+
+	.wp-block-button.is-style-text-arrow .wp-block-button__link {
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 150%;
+
+		&::after {
+			background-size: 16px !important;
+			@include square(16px);
+		}
+	}
+}

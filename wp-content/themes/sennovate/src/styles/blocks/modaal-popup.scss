@@ -1,0 +1,41 @@
+.modaal-iframe {
+	.modaal-container {
+		width: 800px;
+		height: 500px;
+	}
+}
+
+.modaal-container {
+	width: 600px;
+
+	@include respond-to($medium, max) {
+		width: 100%;
+	}
+
+	&.signup-modaal-container {
+		width: 600px;
+
+		@include respond-to($medium, max) {
+			width: 100%;
+		}
+
+		form {
+			width: 100%;
+		}
+	}
+}
+
+.modaal-wrapper .modaal-close {
+	width: 32px;
+	height: 32px;
+	background: var(--wp--custom--colors--button-bg);
+
+	&::before,
+	&::after {
+		top: 9px;
+		left: 16px;
+		width: 2px;
+		height: 16px;
+		background: #fff;
+	}
+}

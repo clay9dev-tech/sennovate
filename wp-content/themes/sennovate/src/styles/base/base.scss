@@ -1,0 +1,48 @@
+body {
+	--wp--custom--colors--body: #596066;
+	--wp--custom--colors--button-bg: #FF5811;
+	--wp--preset--shadow--natural: 0 8px 8px 0 rgba(50, 50, 71, 0.08);
+	overflow-x: hidden;
+}
+
+.main {
+	background: transparent;
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		color: var(--wp--preset--color--light-orange);
+	}
+}
+
+a[href] {
+	cursor: pointer;
+}
+
+a[href='#'] {
+	pointer-events: none;
+}
+
+p {
+	a {
+		color: var(--wp--preset--color--light-orange);
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	@include respond-to($medium, max) {
+		font-size: 14px;
+	}
+}
+
+.revenue-font-size {
+	font-size: 1rem;
+	@include respond-to($medium, max) {
+		font-size: 12px;
+	}
+}

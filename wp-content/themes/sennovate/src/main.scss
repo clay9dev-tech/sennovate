@@ -1,0 +1,60 @@
+@import 'styles/base/typography';
+@import '../../skeletor-core/assets/src/styles/base/mixins.scss';
+@import '../../skeletor-core/assets/src/styles/base/maps.scss';
+
+//Base
+@import 'styles/base/core.scss';
+@import 'styles/base/base.scss';
+@import 'styles/base/dark-theme.scss';
+
+// Core Blocks
+@import 'styles/blocks/core/button.scss';
+@import 'styles/blocks/core/blockquote.scss';
+@import 'styles/blocks/core/post-card.scss';
+@import 'styles/blocks/core/heading.scss';
+@import 'styles/blocks/core/list.scss';
+@import 'styles/blocks/core/tabbed-content.scss';
+
+// Blocks
+@import 'styles/blocks/modaal-popup.scss';
+@import 'styles/blocks/accordion.scss';
+@import 'styles/blocks/swiper.scss';
+
+// Partials
+@import 'styles/partials/header.scss';
+@import 'styles/partials/footer.scss';
+@import 'styles/partials/main-menu.scss';
+@import 'styles/partials/mega-menu.scss';
+@import 'styles/partials/mega-nav-pattern.scss';
+
+// Templates
+@import 'styles/templates/404.scss';
+@import 'styles/templates/archive-filter.scss';
+@import 'styles/templates/archive-post.scss';
+@import 'styles/templates/archive-pagination.scss';
+@import 'styles/templates/category-menu.scss';
+@import 'styles/templates/blog-card.scss';
+@import 'styles/templates/hero-card.scss';
+@import 'styles/templates/home-hero.scss';
+@import 'styles/templates/pattern.scss';
+@import 'styles/templates/single-post.scss';
+@import 'styles/templates/solution-wave-card.scss';
+@import 'styles/templates/swiper-latest-events.scss';
+@import 'styles/templates/archive.scss';
+@import 'styles/templates/search.scss';
+@import 'styles/templates/menu-post-card.scss';
+@import 'styles/templates/solution-build-card.scss';
+@import 'styles/templates/acqueon-cta-card.scss';
+@import 'styles/templates/partner-card.scss';
+@import 'styles/templates/maintenace-table.scss';
+
+@import 'styles/blocks/related-articles.scss';
+@import 'styles/blocks/product-card.scss';
+@import 'styles/blocks/recent-posts.scss';
+@import 'styles/blocks/faq-accordion.scss';
+@import 'styles/blocks/testimonial.scss';
+@import 'styles/blocks/career-slider.scss';
+@import 'styles/blocks/partner-logo.scss';
+
+//global
+@import 'styles/base/global.scss';

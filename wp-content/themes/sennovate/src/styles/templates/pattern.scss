@@ -1,0 +1,172 @@
+//stylelint-disable all
+.right-side-circle-pattern {
+	position: relative;
+	overflow: hidden;
+	@include respond-to($small, max) {
+		padding-bottom: 0px !important;
+	}
+
+	&::after {
+		position: absolute;
+		top: -12%;
+		right: -12%;
+		border-radius: 50%;
+		background-color: #FFEAE1;
+		content: '';
+		@include square(500px);
+
+		@include respond-to($small, max) {
+			top: auto;
+			right: auto;
+			bottom: -20%;
+		}
+	}
+
+	.organization-content {
+		z-index: 1;
+	}
+
+	.organization-banner {
+		position: absolute;
+		z-index: 1;
+		top: 0px;
+		right: 0;
+		width: 100%;
+		max-width: 550px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		aspect-ratio: 550 / 420;
+
+		@include respond-to($small, max) {
+			position: relative;
+			right: -40px;
+		}
+	}
+}
+
+/**
+*	Three column solution box for the partner ecosystems
+**/
+.pattern-solution-build {
+
+	.solution-box-layout-gap {
+		.wp-block-heading,
+		p {
+			margin-top: 1rem;
+		}
+	}
+
+	.solution-two-column {
+		position:relative;
+		min-height: 350px;
+		overflow: hidden;
+		@include respond-to($small, max) {
+			min-height: auto;
+
+			.wp-block-heading,
+			p {
+				text-align: center;
+
+				br {
+					display: none;
+				}
+			}
+		}
+
+		.wp-block-image {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			max-width: 300px;
+
+			@include respond-between($small, $medium) {
+				display: none;
+			}
+
+
+
+			@include respond-to($small, max) {
+				position: relative;
+				bottom: -20px;
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+
+		&.infinite-looping::before {
+			content: '';
+			background-image: url('../images/infinite-looping.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			position: absolute;
+			top: -10px;
+			right: 40px;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.contact-border-column.dividers {
+	border-top: 1px solid #dcc8c0;
+	border-bottom: 1px solid #dcc8c0;
+	@include respond-to($medium, max) {
+		border: none;
+		position: relative;
+	}
+	.wp-block-column {
+		padding-top: 36px;
+		padding-bottom: 36px;
+
+		::after {
+			content: '';
+			background: #DCC8C0;
+			height: 100%;
+			width: 1px;
+			position: absolute;
+			right: -16px;
+			top: 0px;
+
+			@include respond-to($medium, max) {
+				height: 1px;
+				width: 100%;
+			}
+		}
+
+		&:last-child {
+			::after {
+				display: none;
+			}
+		}
+	}
+
+}
+
+.testimonial-slider {
+	overflow: hidden;
+	padding-bottom: 90px;
+
+	@include respond-to($medium, max) {
+		padding-bottom: 60px;
+	}
+}
+
+.overflow-visible {
+	.testimonial-slider {
+		overflow: visible;
+	}
+}
+
+.padding-left-80 {
+    padding-left: 50px;
+
+	@include respond-to($medium, max) {
+		padding-left: 8px;
+	}
+}
+
+@include respond-to($xsmall, max) {
+	.wp-block-columns.is-not-stacked-on-mobile.disable-mobile-stack {
+		flex-wrap: wrap !important;
+	}
+}

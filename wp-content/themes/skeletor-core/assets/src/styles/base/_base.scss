@@ -1,0 +1,113 @@
+@import-normalize;
+@import 'functions';
+@import 'maps';
+@import 'mixins';
+@import 'admin';
+@import 'core';
+@import 'debug';
+
+/*   Base styles and layout
+	--------------------------------------------------------------------------  */
+
+::selection {
+	background: #000;
+	color: color(dark--body);
+	text-shadow: none;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+:root {
+	scroll-padding-top: calc(var(--header-height) + var(--admin-bar-height) + 1rem);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	background: color('body-bg');
+	color: color('body');
+	font-family: family('base');
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+
+	/* stylelint-disable selector-no-qualifying-type */
+
+	&.nav-open {
+		overflow: hidden;
+	}
+	/* stylelint-enable selector-no-qualifying-type */
+}
+
+.main {
+	padding-inline: var(--wp--custom--gutter-width--page);
+
+	> :where(*) {
+		margin-inline: auto;
+		max-width: var(--wp--style--global--content-size);
+	}
+
+	> *:first-child:not(.no-auto-header-padding) {
+		padding-top: var(--header-height);
+	}
+}
+
+.alignwide {
+	max-width: var(--wp--style--global--wide-size);
+}
+
+.alignfull {
+	max-width: none;
+	margin-inline: calc(-1 * var(--wp--custom--gutter-width--page));
+}
+
+button,
+input {
+	font-family: family('base');
+}
+
+.screen-reader-text {
+	@include screen-reader-text;
+}
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+
+	svg {
+		display: block;
+		width: 1em;
+		height: 1em;
+	}
+}
+
+/**
+ * WP core pulls the default block-gap from theme.json
+ * and inlines it as a hard-coded value in the body, here we're
+ * just setting it to the custom property instead
+ **/
+
+body {
+	.is-layout-constrained,
+	.is-layout-flow {
+		> * + * {
+			margin-block-start: var(--wp--style--block-gap);
+		}
+	}
+}
+
+.wp-site-blocks > * + * {
+	margin-block-start: var(--wp--style--block-gap);
+}
+
+.block-editor-block-list__layout.wp-block.is-reusable {
+	max-width: none;
+}

@@ -1,0 +1,101 @@
+.wp-block-columns {
+	@include respond-to($column_stack_breakpoint - 1px, 'max') {
+		&.reverse-stacking-order {
+			flex-direction: column-reverse;
+		}
+	}
+
+	@include respond-to($column_stack_breakpoint) {
+		&.dividers {
+			.wp-block-column {
+				position: relative;
+
+				+ .wp-block-column {
+					&::before {
+						position: absolute;
+						left: calc(-0.5 * var(--wp--custom--gutter-width--column));
+						display: block;
+						width: 1px;
+						height: 100%;
+						opacity: 0.5;
+						background-color: color('border');
+						content: '';
+					}
+				}
+			}
+		}
+
+		@include respond-to(large, 'max') {
+			&.dividers.has-responsive-columns {
+				.wp-block-column + .wp-block-column::before {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.wp-block-column {
+		&.has-sticky-content {
+			position: relative;
+			align-self: stretch;
+
+			> .sticky-content {
+				position: sticky;
+				top: calc(var(--wp--custom--gutter-width--page) + var(--header-height) + var(--admin-bar-height));
+			}
+		}
+	}
+
+	/* stylelint-disable declaration-no-important */
+
+	&.has-responsive-columns {
+		@include respond-to(small, 'max') {
+			flex-flow: column !important;
+
+			> .wp-block-column {
+				flex-basis: 100% !important;
+			}
+		}
+
+		@include respond-between(small, large) {
+			flex-flow: row wrap !important;
+
+			> .wp-block-column {
+				flex-basis: calc(50% - (0.5 * var(--wp--style--block-gap))) !important;
+			}
+		}
+
+		&:not(.is-not-stacked-on-mobile) {
+			@include respond-between(small, 782px) {
+				> .wp-block-column {
+					flex-basis: calc(50% - (0.5 * var(--wp--style--block-gap))) !important;
+				}
+			}
+		}
+	}
+	/* stylelint-enable declaration-no-important */
+
+	&.has-equal-height-columns {
+		align-items: initial;
+
+		.wp-block-column {
+			display: flex;
+			flex-direction: column;
+			align-self: initial;
+
+			> * {
+				flex: 1;
+			}
+		}
+	}
+
+	&.alignfull.remove-side-margins {
+		margin-inline: 0;
+	}
+}
+
+/* set the default alignment for columns */
+
+.skeletor-core .wp-block-columns-is-layout-flex {
+	align-items: start;
+}

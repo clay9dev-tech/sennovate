@@ -1,0 +1,44 @@
+<article {{{_block_attributes}}}>
+	{{#has_object}}
+		<section class="card-content {{#heading}}with-heading-content{{/heading}}">
+			{{#heading}} <h3 class="heading">{{{.}}}</h3>{{/heading}}
+			{{# testimonial }}
+			<blockquote class="wp-block-quote testimonial-content">
+				"{{{ . }}}"
+			</blockquote>
+			{{/ testimonial }}
+
+			<div class="image-and-meta">
+				{{#image}}
+					<aside class="card-image">
+						{{{ image }}}
+					</aside>
+				{{/image}}
+				<div class="testimonial-meta">
+					{{# name }}
+					<span class="attributee-name">{{{ . }}}</span>
+					{{/ name }}
+
+					{{# title }}
+					<span class="attributee-title">{{{ . }}}</span>
+					{{/ title }}
+
+					{{# company }}
+					<span class="attributee-company">{{{ . }}}</span>
+					{{/ company }}
+				</div>
+			</div>
+		</section>
+
+		<section class="card-footer">
+			<div class="{{ button_class_string }}">{{# cta }}{{> link }}{{/ cta }}</div>
+		</section>	
+	{{/has_object}}
+	{{^has_object}}
+		{{#is_preview}}
+			{{#notification_message}}
+				<div class="block-editor-notification">{{{ . }}}</div>
+			{{/notification_message}}
+		{{/is_preview}}
+	{{/has_object}}
+</article>

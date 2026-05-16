@@ -1,0 +1,20 @@
+.wp-block-image {
+	/* stylelint-disable declaration-no-important */
+
+	&.force-full-width {
+		width: 100% !important;
+
+		.components-resizable-box__container {
+			width: 100% !important;
+		}
+
+		.components-resizable-box__handle {
+			display: none !important;
+		}
+
+		img {
+			width: 100% !important;
+		}
+	}
+	/* stylelint-enable declaration-no-important */
+}

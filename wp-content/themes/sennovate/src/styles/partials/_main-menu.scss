@@ -1,0 +1,188 @@
+//stylelint-disable all
+.main-menu {
+	a {
+		font-family: 'Satoshi-Medium', sans-serif !important;
+		font-size: 16px !important;
+		color: var(--sennovate-dark-blue) !important;
+		text-decoration: none !important;
+		white-space: nowrap !important;
+		line-height: 1.4;
+		cursor: pointer;
+		&:hover {
+			color: var(--sennovate-blue) !important;
+			text-decoration: none !important;
+		}
+	}
+
+	.current-menu-item {
+		a {
+			color: var(--wp--preset--color--light-orange);
+		}
+
+		.sub-menu {
+			a {
+				color: initial;
+			}
+		}
+	}
+
+	.current-menu-parent.menu-item-has-children {
+		a {
+			color: var(--wp--preset--color--light-orange);
+		}
+
+		.sub-menu {
+			a {
+				color: initial;
+			}
+
+			.current-menu-item {
+				a {
+					color: var(--wp--preset--color--light-orange);
+				}
+			}
+		}
+
+	}
+
+	.menu-item {
+		> a {
+			position: relative;
+			padding-bottom: 1rem;
+		}
+
+		@include respond-to($large, min) {
+			> a.depth-0 {
+				position: relative;
+				padding-bottom: 1rem;
+			}
+
+			&:hover {
+				> a.depth-0 {
+					padding-bottom: 1rem;
+					background-image: url('../images/menu-border-icon.svg');
+					background-repeat: no-repeat;
+					background-position: bottom center;
+				}
+			}
+		}
+
+		.sub-menu a {
+			background-image: none;
+			font-size: 1rem;
+			font-weight: 500;
+		}
+
+		.sub-menu a:hover {
+			padding-bottom: 12px;
+		}
+	}
+
+	.menu-item-has-children {
+		position: static;
+
+		.menu-item-link.depth-0 {
+			padding-right: 24px;
+
+			@include respond-to($large, min) {
+				&::after {
+					position: absolute !important;
+					top: -10px !important;
+					height: 64px !important;  /* CRITICAL: tall enough to bridge gap to dropdown */
+					background: rgba(0, 0, 0, 0) !important;
+					content: "" !important;
+					display: block !important;
+					right: 0;
+					left: 0;
+					z-index: 1;
+				}
+
+				&::before {
+					position: absolute;
+					top: calc(50% - 8px);
+					right: 0px;
+					left: auto;
+					width: 20px;
+					height: 20px;
+					transform: translateY(-50%);
+					background-image: url('../images/menu-chevron-down.svg');
+					background-repeat: no-repeat;
+					background-position: right center;
+					content: "";
+					transition: transform 0.3s ease;
+				}
+
+				&:hover::before {
+					transform: translateY(-50%) rotate(180deg);
+					background-image: url('../images/menu-chevron-up.svg');
+					background-position: center;
+				}
+			}
+
+		}
+
+		.sub-menu {
+			top: var(--header-height) !important;
+		}
+
+		.sub-menu .menu-item-has-children > a::after {
+			content: none;
+		}
+	}
+
+	.sub-menu {
+		padding: 0 !important;
+		border: 1px solid var(--wp--preset--color--whitish-gray);
+		display: block !important;
+		clip-path: none !important;
+		transform: none !important;
+		transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.3s, padding 0.3s !important;
+
+		@include respond-to($large + 1px, min) {
+			max-width: 220px;
+		}
+
+		@include respond-to($large, max) {
+			max-height: 0 !important;
+			overflow: hidden !important;
+			visibility: hidden !important;
+			opacity: 0 !important;
+			position: static !important;
+			box-shadow: none !important;
+			padding: 0 !important;
+			background: transparent !important;
+			border: none !important;
+			margin: 0 !important;
+			width: 100% !important;
+			top: auto !important;
+			z-index: auto !important;
+
+			&.active {
+				max-height: 600px !important;
+				visibility: visible !important;
+				opacity: 1 !important;
+				padding: 5px 0 10px 15px !important;
+			}
+
+			.go-back {
+				display: none !important;
+			}
+		}
+
+		.menu-item-link {
+			padding: 8px 15px;
+			@include respond-to($large, min) {
+				min-width: auto;
+				border: 1px solid var(--wp--preset--color--whitish-gray);
+			}
+		}
+	}
+
+	.sub-menu-toggle {
+		right: 6px;
+		opacity: 1 !important;
+		&::after {
+			font-size: 7px;
+		}
+	}
+}

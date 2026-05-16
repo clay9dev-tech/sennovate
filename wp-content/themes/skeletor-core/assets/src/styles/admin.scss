@@ -1,0 +1,145 @@
+/* stylelint-disable selector-max-id, declaration-no-important */
+
+#edittag {
+	max-width: none !important;
+}
+
+.edit-post-text-editor__body {
+	max-width: 90em;
+}
+
+.acf-menu-item-fields {
+	width: calc(100% - 13px);
+	margin: 10px 0 0;
+}
+
+.block-editor-block-list__block {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.acf-block-panel .acf-fields > .acf-field.acf-field-repeater {
+	> .acf-input {
+		margin: 0 -16px;
+	}
+
+	.acf-row {
+		border-right: 0;
+		border-left: 0;
+	}
+
+	.acf-repeater {
+		.acf-table {
+			border-width: 1px 0;
+			border-color: #f0f0f0;
+		}
+
+		.acf-actions {
+			margin: 0 16px;
+		}
+
+		.acf-row-handle {
+			width: 6px;
+			padding: 8px 3px;
+			background-color: #fafafa;
+			font-size: 10px;
+
+			.acf-icon {
+				margin: -8px 0 0 -7px;
+			}
+
+			+ td {
+				border-color: #f0f0f0;
+			}
+		}
+
+		.acf-field {
+			margin: 16px 6px;
+
+			&.acf-field-repeater {
+				> .acf-input {
+					margin: 0 -6px;
+				}
+			}
+		}
+	}
+}
+
+.editor-styles-wrapper.wp-embed-responsive {
+	padding: 0;
+}
+
+.wp-block.is-reusable.has-child-selected {
+	&::before {
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		content: '';
+	}
+
+	> .block-editor-block-list__layout {
+		z-index: 2;
+	}
+}
+
+.skeletor-inspector-control {
+	.components-panel__body-toggle {
+		&::before {
+			position: absolute;
+			top: 2px;
+			bottom: 2px;
+			left: 2px;
+			display: block;
+			width: 4px;
+			border-radius: 2px;
+			background: #F3623F;
+			content: '';
+		}
+	}
+}
+
+.is-root-container {
+	padding-inline: var(--wp--custom--gutter-width--page);
+}
+
+.block-editor-notification,
+.block-editor-notification__notice {
+	display: flex;
+	margin-right: 2px;
+	margin-left: 2px;
+	padding: 8px;
+	column-gap: 8px;
+	border: 1px dotted #141414;
+	font-style: italic;
+	text-align: left;
+
+	&::before {
+		flex-shrink: 0;
+		width: 20px;
+		height: 20px;
+		background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg version=%271.1%27 xmlns=%27http://www.w3.org/2000/svg%27 width=%2718%27 height=%2718%27 viewBox=%270 0 18 18%27 xml:space=%27preserve%27 fill=%27%23141414%27%3E %3Cpath d=%27M6.1 1.8C7 0 9.1-.6 10.7.5c.4.3.8.7 1.1 1.1l.1.2 5.6 10.6c.9 1.8.4 4-1.2 5-.4.3-.9.4-1.5.5H3.4C1.5 18 0 16.4 0 14.3c0-.6.1-1.1.3-1.6l.1-.2L6.1 1.8zm3.8-.1c-.9-.5-2-.2-2.6.7l-.1.2-5.6 10.6c-.2.3-.3.7-.3 1.1 0 1.2.8 2.2 1.9 2.2h11.4c.4 0 .7-.1 1-.3.9-.6 1.3-1.9.8-2.9l-.1-.1-5.5-10.6c-.1-.3-.4-.5-.6-.7l-.2-.2h-.1zm-1 10.5c.4 0 .6.1.8.3.1.2.2.3.2.5v.5c0 .2-.1.4-.2.5-.2.2-.4.3-.8.3s-.6-.1-.8-.3c-.1-.2-.2-.3-.2-.5V13c0-.2.1-.4.2-.5.2-.2.5-.3.8-.3zm.9-6.6V8l-.5 3.5h-.7L8.1 8V5.6h1.7z%27/%3E %3C/svg%3E');
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: '';
+	}
+}
+
+.components-notice.full-width-notice {
+	margin-right: 0;
+	margin-left: 0;
+
+	.components-notice__content {
+		p {
+			margin-bottom: 0;
+
+			+ p {
+				margin-top: 1em;
+			}
+		}
+	}
+}

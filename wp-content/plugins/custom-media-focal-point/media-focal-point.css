@@ -1,0 +1,33 @@
+.focal-point-input-wrapper {
+	position: relative;
+	display: inline-block;
+	max-width: 100%;
+	line-height: 0;
+}
+
+.focal-point-input-wrapper img {
+	display: block;
+	min-width: 150px;
+	max-width: 100%;
+	height: auto;
+}
+
+.focal-point-input-wrapper input {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+}
+
+.focal-point-pin {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	margin-top: -5px;
+	margin-left: -5px;
+	border: solid 2px #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 2px #000;
+	background-color: red;
+	pointer-events: none;
+}

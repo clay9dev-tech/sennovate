@@ -1,0 +1,62 @@
+/* stylelint-disable all */
+.client-logos-section {
+	margin: clamp(1.5rem, 0.923rem + 2.308vw, 3rem) 0;
+	width: 100%;
+	max-width: 100%;
+
+	.client-logos-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+		gap: 20px;
+
+		@include respond-to($medium, max) {
+			grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+			gap: 1rem;
+		}
+
+		@include respond-to($xsmall, max) {
+			grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+		}
+	}
+
+	.client-logo-card {
+		border-radius: 6px;
+		border: 1px solid #c3d4e4;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		height: 100px;
+
+		@include respond-to($medium, max) {
+			height: 90px;
+		}
+
+		.wp-image-link {
+			padding: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+
+		img {
+			max-height: 60px;
+			max-width: 160px;
+			object-fit: contain;
+
+			@include respond-to($medium, max) {
+				max-height: 100%;
+				max-width: 100%;
+			}
+		}
+
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+		}
+	}
+
+}

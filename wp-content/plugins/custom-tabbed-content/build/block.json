@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "mandy/tabbed-content",
+	"version": "0.1.0",
+	"title": "Tabbed Content",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "",
+	"example": {},
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"textdomain": "mandy",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"allowedBlocks": [
+		"mandy/tabbed-content--tab"
+	],
+	"attributes": {
+		"tabs": {
+			"type": "array"
+		},
+		"tabsId": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		}
+	}
+}

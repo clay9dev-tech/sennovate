@@ -1,0 +1,209 @@
+// Variables (optional – define elsewhere or above if needed)
+$border-color: #e0e0e0;
+$search-border: #ccc;
+$primary-radius: 8px;
+$small-radius: 6px;
+$z-index-sticky: 10;
+$sticky-top: 150px;
+
+.post-filter {
+	position: sticky;
+	z-index: $z-index-sticky;
+	top: $sticky-top;
+	border-radius: $primary-radius;
+	background-color: #fff;
+
+	@include respond-to($medium) {
+		flex: 0 0 300px;
+	}
+
+	@include respond-to($medium, max) {
+		position: inherit;
+		width: 100%;
+	}
+
+	.search-wrapper {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1rem;
+		padding: 14px 20px;
+		border: 1px solid #CACACA;
+		border-radius: 4px;
+
+		@include respond-to($medium, max) {
+			padding: 9px;
+
+			input {
+				color: #000;
+				font-size: 14px;
+			}
+		}
+
+		button {
+			padding: 0;
+			border: none;
+			background: none;
+		}
+
+		input {
+			flex: 1;
+			height: 30px;
+			outline: none;
+			border: none;
+			color: #383F45;
+			font-size: 18px;
+
+			&::placeholder {
+				opacity: 1;
+				color: #383F45;
+			}
+
+			&::-webkit-input-placeholder {
+				color: #383F45;
+			}
+
+			&:-moz-placeholder {
+				opacity: 1;
+				color: #383F45;
+			}
+
+			&::-moz-placeholder {
+				opacity: 1;
+				color: #383F45;
+			}
+
+			&:-ms-input-placeholder {
+				color: #383F45;
+			}
+		}
+
+		.search-icon {
+			svg {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+
+	.category-filter {
+		.filter-toggle {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			padding: 16px 20px;
+			border: 1px solid #CACACA;
+			border-radius: 4px;
+			background: none;
+			font-size: 18px;
+			cursor: pointer;
+
+			@include respond-to($medium, max) {
+				padding: 12px;
+				font-size: 14px;
+			}
+
+			&[aria-expanded='false'] {
+				.arrow img {
+					transform: rotate(180deg);
+					transition: transform 0.3s ease;
+				}
+			}
+		}
+
+		.arrow {
+			width: 24px;
+			height: 24px;
+
+			img {
+				width: 24px;
+				transition: transform 0.3s ease;
+
+				@include respond-to($medium, max) {
+					display: none;
+				}
+			}
+
+			@include respond-to($medium, max) {
+				background-image: url('../images/filter.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+		}
+
+		.custom-post-categories {
+			margin-top: 0;
+			padding: 32px 24px;
+			border: 1px solid #CACACA;
+			border-radius: 4px;
+			list-style: none;
+
+			li {
+				margin-bottom: 0.5rem;
+				padding-left: 0;
+
+				&::before {
+					display: none;
+				}
+
+				label {
+					display: flex;
+					align-items: center;
+					color: #000;
+					font-size: 16px;
+					cursor: pointer;
+					gap: 16px;
+
+					input[type='checkbox'] {
+						width: 24px;
+						height: 24px;
+						accent-color: #CACACA; // Optional styling
+					}
+
+					span {
+						display: inline-block;
+						flex: 1; // Take the remaining space
+					}
+				}
+			}
+		}
+	}
+}
+
+.post-content {
+	.selected-filter {
+		ul {
+			margin: 0;
+			margin-bottom: 15px;
+			padding: 0;
+
+			li {
+				display: inline-block;
+				margin-top: 0;
+				margin-right: 10px;
+				padding: 5px 10px;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				font-size: 16px;
+
+				&::before {
+					display: none;
+				}
+			}
+		}
+
+		.clear-filter {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			max-width: 90px;
+			padding: 5px 10px;
+			border-radius: 4px;
+			background: #ee5e2c;
+			color: #fff;
+			font-size: 16px;
+			gap: 10px;
+			cursor: pointer;
+		}
+	}
+}

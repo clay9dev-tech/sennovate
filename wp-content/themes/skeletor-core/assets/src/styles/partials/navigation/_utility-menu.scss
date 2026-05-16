@@ -1,0 +1,13 @@
+.menu.utility-menu {
+	padding-bottom: 4px;
+	font-size: 14px;
+
+	@include respond-to($navigation - 1px, 'max') {
+		align-items: center;
+	}
+}
+
+.utility-menu-wrapper {
+	position: relative;
+	width: 100%;
+}

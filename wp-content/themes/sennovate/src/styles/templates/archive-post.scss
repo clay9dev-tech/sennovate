@@ -1,0 +1,28 @@
+//stylelint-disable all
+.archive-posts, .related-articles-cards, .recent-posts, .latest-post-event-news {
+    display: grid;
+	max-width: var(--wp--style--global--wide-size);
+	margin-top: 2rem;
+	padding-top: 0 !important;
+	grid-template-columns: 1fr 1fr 1fr;
+	list-style: none;
+	gap: 24px;
+
+	@include respond-to($medium) {
+		margin-bottom: 70px;
+	}
+
+	@include respond-to($large, max) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@include respond-to($small, max) {
+		grid-template-columns: 1fr;
+	}
+
+	.no-results {
+		grid-column: 1 / -1;
+		text-align: center;
+	}
+}
+

@@ -1,0 +1,14 @@
+/* stylelint-disable selector-max-id, declaration-no-important */
+/*   WordPress Admin
+	--------------------------------------------------------------------------  */
+
+#wpadminbar {
+	@media screen and (max-width: 600px) {
+		position: fixed !important;
+	}
+}
+
+.mce-content-body {
+	max-width: 58em;
+	margin: 20px;
+}

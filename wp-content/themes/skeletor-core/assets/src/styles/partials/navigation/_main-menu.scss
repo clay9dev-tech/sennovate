@@ -1,0 +1,174 @@
+.menu.main-menu {
+	--gap: var(--wp--custom--gutter-width--page);
+
+	@include respond-to($navigation - 1px, 'max') {
+		overflow: hidden;
+		gap: calc(0.125 * var(--gap));
+
+		.menu-item {
+			&.wp-block-button,
+			&.menu-item-object-wp_block {
+				margin-top: var(--gap);
+				padding-inline: var(--gap);
+			}
+		}
+
+		.sub-menu-toggle {
+			right: var(--gap);
+		}
+
+		.menu-item-link {
+			position: relative;
+			display: block;
+			padding: calc(0.25 * var(--gap))
+				var(--gap);
+		}
+
+		.sub-menu {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: var(--nav-height);
+			transform: translateX(100%);
+			transition: transform 0.3s ease-out;
+			padding-block: var(--gap)
+				calc(4 * var(--gap));
+
+			&.active {
+				transform: translateX(0);
+			}
+		}
+	}
+
+	@include respond-to('navigation') {
+		.sub-menu {
+			--offsetX: 0;
+			position: absolute;
+			padding: calc(0.5 * var(--gap)) var(--gap);
+			clip-path: inset(0);
+			transform: translateX(var(--offsetX));
+			transition: clip-path 0.3s ease-out;
+
+			&:has(.menu-item-has-children:hover) {
+				clip-path: none;
+			}
+
+			.menu-item-link {
+				min-width: 200px;
+			}
+		}
+
+		.menu-item:not(:hover) {
+			> .sub-menu {
+				z-index: -1;
+				clip-path: inset(0 0 100% 0);
+				transition-delay: 0.125s;
+			}
+		}
+
+		.menu-item-link.depth-0 {
+			position: relative;
+
+			&::after {
+				position: absolute;
+				top: -10px;
+				right: calc(-0.5 * var(--gap));
+				left: calc(-0.5 * var(--gap));
+				display: block;
+				height: 64px;
+				background: transparent;
+				content: '';
+			}
+
+			+ .sub-menu {
+				top: var(--header-height);
+			}
+		}
+
+		.menu-item:not(.menu-item-has-meganav) {
+			.menu-item-link.depth-0 {
+				+ .sub-menu {
+					margin-left: calc(-1 * var(--gap));
+				}
+			}
+
+			> .sub-menu {
+				.menu-item-has-children {
+					position: relative;
+
+					> .menu-item-link > .sub-menu-toggle {
+						display: block;
+						opacity: 0.5;
+						pointer-events: none;
+					}
+
+					.sub-menu {
+						top: calc(-0.5 * var(--gap));
+						left: 100%;
+					}
+				}
+			}
+		}
+
+		.menu-item.menu-item-has-meganav {
+			--content-width: var(--wp--custom--container-width--wide, 1170px);
+
+			.menu-item-object-wp_block {
+				margin-left: auto;
+			}
+
+			> .sub-menu {
+				top: var(--header-height);
+				left: 0;
+				display: flex;
+				width: 100vw;
+				gap: var(--gap);
+				padding-block: var(--wp--custom--gutter-width--page);
+				padding-inline: clamp(var(--wp--custom--gutter-width--page),
+				calc(0.5 * (100vw - var(--content-width))),
+				50vw);
+
+				.menu-item-link {
+					min-width: 160px;
+					padding-left: 0;
+				}
+
+				.sub-menu {
+					position: static;
+					padding: 0;
+					clip-path: inset(0);
+				}
+			}
+		}
+	}
+
+	.go-back {
+		display: block;
+		width: 100%;
+		padding-left: calc(2 * var(--gap));
+		opacity: 0.75;
+		border: 0;
+		font-size: 13px;
+		font-weight: bold;
+		text-align: left;
+		text-transform: uppercase;
+
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: var(--gap);
+			width: 16px;
+			height: 16px;
+			margin-top: -8px;
+			padding: 0;
+			transform: rotate(90deg);
+			border: 0;
+			color: var(--wp--custom--colors--body);
+			font-size: 10px;
+			font-icon: url('../images/chevron.svg');
+		}
+	}
+
+}

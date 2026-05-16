@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "mandy/swiper",
+  "version": "0.1.0",
+  "title": "Swiper",
+  "category": "widgets",
+  "icon": "slides",
+  "description": "Slider block powered by Swiper JS.",
+  "supports": {
+    "anchor": true,
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "mandy",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "viewScript": [
+    "wp-hooks",
+    "file:./view.js"
+  ],
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,28 @@
+.wp-block-mandy-slider--slide {
+	> .block-editor-inner-blocks > .block-editor-block-list__layout {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+
+		> * {
+			margin: 0;
+
+			+ * {
+				margin-block-start: var(--wp--style--block-gap);
+			}
+		}
+	}
+
+	.components-resizable-box__container {
+		max-width: 100% !important;
+		max-height: 100% !important;
+	}
+}
+
+.swiper-initialized.swiper-fade .swiper-slide:not(.swiper-slide-visible) {
+	pointer-events: none !important;
+
+	* {
+		pointer-events: none !important;
+	}
+}

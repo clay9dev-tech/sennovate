@@ -1,0 +1,21 @@
+{{#faqs}}
+	<section class="faq-accordion">
+		{{#heading}}<h2>{{{.}}}</h2>{{/heading}}
+		{{#faq}}
+			<div class="faq-wrapper">
+				{{#posts}}
+					<div class="accordion-wrapper">
+						{{#post_title}}
+							<h3 class="accordion-heading">{{.}}</h3>
+						{{/post_title}}
+						{{#post_content}}
+							<div class="accordion-description">
+								{{{.}}}
+							</div>
+						{{/post_content}}
+					</div>
+				{{/posts}}
+			</div>
+		{{/faq}}
+	</section>
+{{/faqs}}

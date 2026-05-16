@@ -1,0 +1,26 @@
+<div class="post-card">
+	<a href="{{{href}}}" class="post-read-more-cover" aria-label="Read more about {{{title}}}">
+		<div class="card-image">
+			{{{image}}}
+			{{# categories.0}}
+				<aside class="card-terms">
+					{{#categories}}
+					<div class="card-term blog-post-term-category">
+						{{{ name }}}
+					</div>
+					{{/categories}}
+				</aside>
+			{{/ categories.0}}
+		</div>
+		<div class="card-content">
+			{{#title}}<h4 class="post-title">{{{.}}}</h4>{{/title}}
+			{{#author}}<h6 class="post-author"><span>By:</span>{{{.}}}</h6>{{/author}}
+			{{#content}}<p>{{{.}}}..</p>{{/content}}
+			<div class="wp-block-button is-style-text">
+				<div class="wp-block-button__link">
+					<span>{{{ cta }}}</span>
+				</div>
+			</div>
+		</div>
+	</a>
+</div>

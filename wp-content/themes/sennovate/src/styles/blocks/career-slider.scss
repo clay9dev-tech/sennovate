@@ -1,0 +1,62 @@
+/* stylelint-disable all */
+.career-slides-container {
+	padding-bottom: var(--wp--preset--spacing--40);
+
+	@include respond-to($medium, max) {
+		padding-bottom: 0;
+	}
+}
+
+.career-grid {
+	display: grid;
+	align-items: stretch;
+	grid-template-columns: 2fr 1fr;
+	gap: 24px;
+	@include respond-to($medium, max) {
+		gap: 12px;
+	}
+}
+
+.career-small {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	gap: 24px;
+	@include respond-to($medium, max) {
+		gap: 12px;
+	}
+}
+
+.career-big img,
+.career-small img {
+	@include square(100%);
+	object-fit: cover;
+	border-radius: 12px;
+}
+
+.career-grid-slider {
+	width: 100%;
+	max-width: var(--wp--style--global--wide-size, 1350px);
+	margin: auto;
+	padding-bottom: var(--wp--preset--spacing--80) !important;
+}
+
+.career-grid-slider .swiper-pagination {
+	bottom: 40px !important;
+}
+
+.career-grid-slider .swiper-pagination-bullet {
+	width: 12px;
+	height: 12px;
+	@include square(12px);
+	margin: 0 4px;
+	opacity: 1;
+	background-color: #CED2D6;
+	@include respond-to($medium, max) {
+		@include square(10px);
+		margin: 0 3px;
+	}
+}
+
+.career-grid-slider .swiper-pagination-bullet-active {
+	background-color: var(--wp--preset--color--light-orange);
+}

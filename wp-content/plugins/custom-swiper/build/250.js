@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmandy_swiper=self.webpackChunkmandy_swiper||[]).push([[250],{250:function(e,s,i){i.r(s)}}]);

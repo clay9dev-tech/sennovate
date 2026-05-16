@@ -1,0 +1,27 @@
+//stylelint-disable all
+details {
+	padding: 0.625rem 0;
+
+	>summary {
+		position: relative;
+		padding: 0.5rem 1.25rem;
+		background: var(--wp--preset--color--whitish-gray);
+		list-style: none;
+		cursor: pointer;
+
+        &::after {
+            content: "+";
+            position: absolute;
+            right: 1.25rem;
+        }
+	}
+
+	p {
+		margin-top: 12px !important;
+		padding-left: 1.25rem;
+	}
+}
+
+details[open] summary::after {
+    content: '-';
+}

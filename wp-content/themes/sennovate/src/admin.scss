@@ -1,0 +1,27 @@
+.acf-rel-item-remove .acf-icon[data-name="remove_item"] {
+    pointer-events: auto;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+}
+
+.block-editor-block-list__block {
+	margin-top: 0;
+	margin-bottom: 0;
+
+	.acf-actions {
+		.acf-icon {
+			pointer-events: visible !important;
+		}
+	}
+}
+
+.acf-repeater .acf-row-handle.remove {
+	.acf-icon {
+		pointer-events: visible !important;
+	}
+}
+
+.wp-admin.block-editor-page a[href="#"] {
+  pointer-events: visible !important;
+}

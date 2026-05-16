@@ -1,0 +1,72 @@
+/* stylelint-disable all */
+.faq-accordion {
+	.faq-wrapper {
+		margin: 0;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	.accordion-wrapper {
+		position: relative;
+		display: grid;
+		overflow: hidden;
+		grid-template-rows: 0fr;
+		border-radius: 5px;
+		transition: grid-template-rows 0.35s ease-in-out;
+
+		&.active {
+			grid-template-rows: 1fr;
+			outline: none;
+
+			.accordion-heading {
+				color: var(--wp--preset--color--blue);
+
+				&::after {
+					background-image: url('../images/minus-icon.svg');
+					transition: background-image 0.35s ease-in-out;
+				}
+			}
+		}
+
+		.accordion-heading {
+            position: relative;
+            margin: 12px 0;
+            padding-right: 40px;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%;
+            cursor: pointer;
+			transition: color 0.35s ease-in-out;
+
+			&::after {
+				position: absolute;
+				top: calc( 50% - 7px);
+				right: 0;
+				width: 17px;
+				height: 15px;
+				background-image: url('../images/plus-icon.svg');
+				content: '';
+				transition: transform 0.35s ease-in-out;
+			}
+		}
+
+		.accordion-description {
+			height: 0;
+			padding-top: 5px;
+			padding-right: 40px;
+			transition: height 0.35s ease-in-out;
+
+			p {
+                font-size: 18px;
+				margin: 0 !important;
+				padding: 0 0 1.3rem;
+			}
+		}
+	}
+}
+/* stylelint-enable all */

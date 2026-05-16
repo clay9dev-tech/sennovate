@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "mandy/tabbed-content--tab",
+	"version": "0.1.0",
+	"title": "Tabbed Content Tab",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "",
+	"example": {},
+	"parent": [
+		"mandy/tabbed-content"
+	],
+	"supports": {
+		"html": false
+	},
+	"textdomain": "mandy",
+	"editorScript": "file:./index.js"
+}

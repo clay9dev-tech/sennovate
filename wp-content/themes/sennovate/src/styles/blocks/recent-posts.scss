@@ -1,0 +1,23 @@
+.recent-posts {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 22px; // optional
+
+	@include respond-to($medium, max) {
+		grid-template-columns: 1fr;
+		gap: 0;
+	}
+
+	.column-left {
+		grid-column: 1; // left half
+
+		@include respond-to($medium, max) {
+			margin-bottom: 20px;
+			grid-column: -1;
+		}
+	}
+
+	.column-right {
+		grid-column: 2; // right half
+	}
+}

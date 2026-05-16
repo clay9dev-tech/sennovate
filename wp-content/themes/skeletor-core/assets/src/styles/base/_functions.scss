@@ -1,0 +1,21 @@
+/*   Base Functions
+	--------------------------------------------------------------------------  */
+/**
+ * Sets z-index with map value
+ */
+@function z($key) {
+	@if map-has-key($z-index, $key) {
+		@return map-get($z-index, $key);
+	}
+
+	@warn unquote('"Unknown "#{$key}" in $z-index."');
+	@return null;
+}
+
+@function color($key) {
+	@return var(--wp--custom--colors--#{$key});
+}
+
+@function family($key) {
+	@return var(--wp--custom--fonts--#{$key});
+}

@@ -1,0 +1,7 @@
+.wp-block-query {
+	.wp-block-post-template {
+		.wp-block-post:where(li) {
+			padding-left: unset;
+		}
+	}
+}

@@ -1,0 +1,14 @@
+.related-articles-cards {
+	transition: all;
+	gap: 24px;
+
+	@include respond-to($large) {
+		gap: 48px;
+	}
+
+	@include respond-to(medium, 'max') {
+		.description {
+			display: none;
+		}
+	}
+}

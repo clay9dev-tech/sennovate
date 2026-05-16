@@ -1,0 +1,150 @@
+.wp-block-mandy-swiper {
+	position: relative;
+	--space-between: 0px;
+	--swiper-navigation-size: 48px;
+	--swiper-navigation-inset: 0px;
+	--swiper-navigation-gutter: 0px;
+
+	&.has-navigation-inset {
+		--swiper-navigation-inset: var(--wp--custom--gutter-width--column, var(--wp--style--block-gap, 24px));
+
+		> .block-editor-block-list__layout {
+			position: static;
+		}
+	}
+
+	&.has-navigation-padding {
+		&:not(.has-navigation-inset) {
+			// adds a little buffer between the slider and the navigation arrows
+			--swiper-navigation-gutter: .5rem;
+		}
+
+		padding-inline: calc(var(--swiper-navigation-size) + var(--swiper-navigation-inset) + var(--swiper-navigation-gutter));
+
+		> .block-editor-block-list__layout {
+			position: static;
+		}
+	}
+
+	&.has-overflow-visible {
+		.swiper { overflow: visible; }
+	}
+
+	.swiper {
+		position: static;
+	}
+
+	.swiper-wrapper {
+		@at-root .has-slide-align-top#{&} {
+			align-items: flex-start;
+		}
+		@at-root .has-slide-align-center#{&} {
+			align-items: center;
+		}
+		@at-root .has-slide-align-bottom#{&} {
+			align-items: flex-end;
+		}
+		@at-root .has-slide-align-stretch#{&} {
+			align-items: stretch;
+
+			.swiper-slide {
+				height: auto;
+			}
+		}
+		@at-root .has-timing-function-ease#{&} {
+			transition-timing-function: ease;
+		}
+		@at-root .has-timing-function-ease-in#{&} {
+			transition-timing-function: ease-in;
+		}
+		@at-root .has-timing-function-ease-out#{&} {
+			transition-timing-function: ease-out;
+		}
+		@at-root .has-timing-function-ease-in-out#{&} {
+			transition-timing-function: ease-in-out;
+		}
+		@at-root .has-timing-function-linear#{&} {
+			transition-timing-function: linear;
+		}
+	}
+
+	.swiper-slide {
+		width: auto;
+
+		@at-root .has-slide-width#{&} {
+			width: var(--slide-width);
+		}
+
+		> * {
+			@at-root .stretch-content-height#{&} {
+				height: 100%;
+			}
+		}
+	}
+
+	.swiper-pagination {
+		@at-root .has-pagination-position-static#{&} {
+			position: static;
+			margin-top: var(--pagination-margin, 0);
+		}
+	}
+
+	.swiper-button-next,
+	.swiper-button-prev {
+		width: var(--swiper-navigation-size);
+		height: var(--swiper-navigation-size);
+		border-radius: calc(0.5 * var(--swiper-navigation-size));
+		background-color: var(--wp--custom--colors--button-bg, var(--swiper-theme-color, #000));
+
+		&::after {
+			width: var(--swiper-navigation-size);
+			height: var(--swiper-navigation-size);
+			transform-origin: center;
+			background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="13" height="8" viewBox="0 0 13 8"><path fill="%23fff" d="M13 1.5L11.5 0l-5 4.9-5-4.9L0 1.5 6.5 8z"/></svg>');
+			background-repeat: no-repeat;
+			background-position: center;
+			content: '';
+		}
+	}
+
+	.swiper-button-prev {
+		left: calc(0.5 * var(--swiper-navigation-inset));
+		transform: rotate(90deg);
+	}
+	.swiper-button-next {
+		right: calc(0.5 * var(--swiper-navigation-inset));
+		transform: rotate(-90deg);
+	}
+
+	@media only screen and (min-width: 800px) {
+		&.has-scrollbar-mobile {
+			.swiper-scrollbar {
+				display: none;
+			}
+		}
+	}
+
+	.swiper-scrollbar {
+		left: 0;
+		width: 100%;
+		height: 2px;
+
+		&.swiper-scrollbar-horizontal {
+			left: 0;
+			width: 100%;
+			height: 2px;
+		}
+
+		.swiper-scrollbar-drag {
+			background: rgba(0,0,0,0.3);
+		}
+	}
+}
+
+/**
+ * fixes bug in Safari where clicking the next button (not prev?!?!)
+ * sometimes selects the content of the slider
+ **/
+.wp-block-mandy-swiper::selection {
+	background-color: unset;
+}

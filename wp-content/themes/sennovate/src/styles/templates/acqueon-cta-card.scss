@@ -1,0 +1,80 @@
+//stylelint-disable all
+.acqueon-cta-card {
+	border-radius: 20px;
+	overflow: hidden;
+	width: 100%;
+	max-width: 100%;
+
+	.acqueon-cta-card-section {
+		height: auto;
+		min-height: auto;
+		padding: 0;
+		.wp-block-cover__inner-container {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: clamp(4.5rem, 4.308rem + 0.769vw, 5rem) clamp(2.5rem, 2.115rem + 1.538vw, 3.5rem);
+
+			@include respond-to($medium, max) {
+				flex-direction: column;
+				padding-bottom: 0;
+			}
+
+			&::after {
+				position: absolute;
+				top: -20%;
+				right: -15%;
+				border-radius: 50%;
+				background-color: #FFEAE1;
+				content: '';
+				@include square(550px);
+
+				@include respond-to($medium, max) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&.alice-blue-rounded .acqueon-cta-card-section .wp-block-cover__inner-container {
+		&::after {
+			background-color: #DEECFB;
+		}
+	}
+
+	.acqueon-cta-content {
+		padding-left: 0px;
+		flex: 1;
+		max-width: 75%;
+		z-index: 1;
+
+		@include respond-to($medium, max) {
+			max-width: 100%;
+			padding-right: 0px;
+		}
+
+		h2 {
+			color: #1a1d1f;
+
+			@include respond-to($medium, max) {
+				font-size: 26px;
+			}
+		}
+	}
+
+	.acqueon-cta-images {
+		flex: 1;
+		margin: 0;
+		width: 550px;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+
+		@include respond-to($medium, max) {
+			position: relative;
+			margin-top: 40px;
+			width: 350px;
+		}
+	}
+}

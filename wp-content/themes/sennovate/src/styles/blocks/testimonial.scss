@@ -1,0 +1,140 @@
+/* stylelint-disable all */
+.testimonial-card {
+    padding: 0;
+    border-radius: 15px;
+
+	.card-content {
+		position: relative;
+
+        @include respond-to($medium) {
+            padding: 55px;
+        }
+	}
+
+    .heading {
+        font-size: 26px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        color: #000;
+        text-align: left;
+
+		@include respond-to($medium, max) {
+			font-size: 20px;
+		}
+    }
+
+	.testimonial-content {
+		text-align: left;
+        color: #1A1D1F;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125%;
+        font-size: 18px;
+        padding: 0;
+
+        @include respond-to($medium) {
+			font-weight: 500;
+            margin-bottom: 70px;
+            font-size: 26px;
+        }
+
+		&::before {
+			display: none;
+		}
+	}
+
+    .with-heading-content {
+        .testimonial-content {
+            font-weight: 500;
+        }
+
+        .attributee-title {
+            display: none;
+        }
+    }
+
+	.image-and-meta {
+		display: flex;
+        gap: 20px;
+        align-items: center;
+	}
+
+    .testimonial-meta {
+        margin: 0;
+        display: flex;
+        gap: 3px;
+        flex-direction: column;
+        text-align: left;
+
+        .attributee-name {
+            color: #06061C;
+            font-size: 17.999px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%;
+            letter-spacing: -0.198px;
+
+			@include respond-to($medium, max) {
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 150%;
+			}
+        }
+
+        .attributee-title {
+            color: #656565;
+            font-size: 15.999px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%;
+            letter-spacing: -0.176px;
+        }
+    }
+
+	.card-image {
+		width: 52px;
+		height: 52px;
+        margin-bottom: 0;
+
+		figure {
+			height: 100% !important;
+		}
+	}
+}
+
+.testimonial-slider.nav-bottom {
+
+	.swiper-button-prev {
+		left: 20px !important;
+        right: auto;
+
+		@include respond-to($medium, max) {
+			right: 51%;
+            left: calc( 50% - 50px ) !important;
+		}
+	}
+
+	.swiper-button-next {
+        left: 100px;
+
+		@include respond-to($medium, max) {
+            left: 50%;
+		}
+	}
+
+	.swiper-button-next,
+	.swiper-button-prev {
+        top: auto;
+		bottom: 0;
+	}
+}
+
+.home-testimonial {
+    .testimonial-slider .swiper-slide {
+        @include respond-to($medium) {
+            width: 70%;
+        }
+    }
+}
+
+/* stylelint-enable all */

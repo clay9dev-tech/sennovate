@@ -1,0 +1,56 @@
+<footer id="footer" class="sennovate-footer">
+    <div class="sf-container">
+        <div class="sf-top">
+            <!-- Column 1: Brand Info -->
+            <div class="sf-col sf-brand">
+                <div class="sf-logo">
+                    <a href="/">
+                        <img src="{{footer_logo}}" alt="Sennovate">
+                    </a>
+                </div>
+                <div class="sf-address">
+                    <p>{{{footer_address}}}</p>
+                </div>
+                <div class="sf-contact">
+                    {{#footer_phone}}<p><a href="tel:{{footer_phone}}">{{footer_phone}}</a></p>{{/footer_phone}}
+                    {{#footer_email}}<p><a href="mailto:{{footer_email}}">{{footer_email}}</a></p>{{/footer_email}}
+                </div>
+                <div class="sf-social">
+                    {{#footer_socials}}
+                    <a href="{{url}}" target="_blank"><img src="{{icon_url}}" alt="{{platform}}"></a>
+                    {{/footer_socials}}
+                </div>
+                <div class="sf-certs">
+                    {{#footer_certs}}
+                    <img src="{{logo}}" alt="{{alt}}">
+                    {{/footer_certs}}
+                </div>
+            </div>
+
+            <!-- Dynamic Menu Columns -->
+            {{#footer_menu_columns}}
+            <div class="sf-col">
+                <h6 class="sf-heading">{{title}}</h6>
+                <ul class="sf-links">
+                    {{#links}}
+                    <li><a href="{{url}}">{{text}}</a></li>
+                    {{/links}}
+                </ul>
+            </div>
+            {{/footer_menu_columns}}
+        </div>
+
+        <div class="sf-divider"></div>
+
+        <div class="sf-bottom">
+            <div class="sf-copyright">
+                <p>{{{footer_copyright}}}</p>
+            </div>
+            <div class="sf-legal">
+                {{#footer_legal_links}}
+                <a href="{{url}}">{{text}}</a>
+                {{/footer_legal_links}}
+            </div>
+        </div>
+    </div>
+</footer>

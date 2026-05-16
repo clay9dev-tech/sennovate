@@ -1,0 +1,117 @@
+//stylelint-disable all
+.search-body {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 101;
+    display: none;
+    position: fixed;
+    background-color: #192A52;
+
+    &.active {
+        display: block;
+    }
+
+    .search-body-close {
+        top: 100px;
+        right: 20px;
+        font-size: 20px;
+        position: absolute;
+        cursor: pointer;
+        color: transparent;
+        background-image: url('../images/search-close.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 60px;
+        width: 60px;
+        background-size: 24px;
+    }
+
+    .search-body-wrap {
+        height: 100vh;
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        max-width: var(--wp--style--global--wide-size);
+        margin: 0 auto;
+    }
+
+    .search-form-wrap {
+        max-width: 54.625rem;
+    }
+
+    .search-form {
+        background-color: transparent;
+    }
+
+    .search-form {
+        width: 100%;
+        position: relative;
+
+        &::after {
+            width: 100%;
+            content: "";
+            display: block;
+            height: .05rem;
+            transition: all 1000ms 400ms;
+            background: linear-gradient(90deg, #FF5811 14.32%, #1E1E1E 117.63%)
+        }
+
+        input {
+            width: 100%;
+            border: none;
+            color: #fff;
+            outline: none;
+            height: 4.5rem;
+            font-size: clamp(1.5rem, 0.841rem + 2.927vw, 3rem);
+            line-height: 3.5rem;
+            background: rgba(0,0,0,0);
+            padding-right: clamp(1.5rem, 0.841rem + 2.927vw, 3rem);
+            padding-bottom: 1rem
+        }
+
+        input:focus {
+            outline: none
+        }
+
+        input::placeholder {
+            color: #fff
+        }
+
+        .search-submit {
+            color: transparent;
+            cursor: pointer;
+            width: clamp(3rem, 2.671rem + 1.463vw, 3.75rem);
+            height: clamp(3rem, 2.671rem + 1.463vw, 3.75rem);
+            background-image: url('../images/search-white.svg');
+			background-repeat: no-repeat;
+			background-position: center center;
+            border: 1px solid #fff;
+        }
+    }
+}
+
+
+.search-results {
+    .post-main {
+        max-width: 1000px;
+
+        .archive-posts {
+            .post-card {
+                .image {
+                    display: none;
+                }
+
+                .tags {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .archive-posts {
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+}

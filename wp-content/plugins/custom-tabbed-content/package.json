@@ -1,0 +1,30 @@
+{
+	"name": "tabbed-content",
+	"version": "1.0.2",
+	"description": "Example block scaffolded with Create Block tool.",
+	"license": "GPL-2.0-or-later",
+	"author": "Mandy",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^29.0.0"
+	},
+	"plugin_data": {
+		"author": "Mandy",
+		"author_profile": "https://mandydesign.com",
+		"title": "Mandy Tabbed Content",
+		"download_url": "https://bitbucket.org/teammandy/mandy-tabbed-content/get/master.zip",
+		"tested": "6.6.1",
+		"requires": "6.1.0",
+		"requires_php": "7.4",
+		"last_updated": "2024-09-15 16:16"
+	}
+}

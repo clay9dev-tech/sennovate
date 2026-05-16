@@ -1,0 +1,127 @@
+// Positional fallback for the first section on the home page
+.home main > div:first-child,
+.home-hero,
+.home .home-banner {
+	padding: 100px 0 !important;
+	background: linear-gradient(135deg, #E7EEFA 0%, #FBFDFF 49%, #DFF2FF 100%) !important;
+	position: relative;
+	overflow: hidden;
+
+	@include respond-to($medium, max) {
+		padding: 60px 0 !important;
+	}
+
+	// Internal container or Gutenberg Group
+	.container,
+	&.wp-block-group > .wp-block-group__inner-container,
+	&.is-layout-constrained {
+		max-width: 1240px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1.1fr 0.9fr;
+		align-items: center;
+		gap: 60px;
+		padding: 0 24px;
+
+		@include respond-to($medium, max) {
+			grid-template-columns: 1fr;
+			gap: 40px;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	// Heading styling
+	h1, 
+	.wp-block-heading {
+		font-family: 'Satoshi-Black', sans-serif !important;
+		font-size: clamp(2.5rem, 5vw, 3.625rem) !important;
+		line-height: 1.2 !important;
+		font-weight: 900 !important;
+		color: #051630 !important;
+		margin-bottom: 24px !important;
+		letter-spacing: -0.02em !important;
+
+		@include respond-to($medium, max) {
+			font-size: 2.75rem !important;
+		}
+	}
+
+	p {
+		font-family: 'Inter', sans-serif !important;
+		font-size: 1.125rem !important;
+		line-height: 1.6 !important;
+		color: #596066 !important;
+		margin-bottom: 40px !important;
+		max-width: 520px !important;
+
+		@include respond-to($medium, max) {
+			margin: 0 auto 32px !important;
+			font-size: 1.1rem !important;
+		}
+	}
+
+	// Gutenberg Buttons
+	.wp-block-buttons {
+		display: flex;
+		gap: 16px;
+
+		@include respond-to($medium, max) {
+			justify-content: center;
+		}
+
+		.wp-block-button {
+			.wp-block-button__link {
+				padding: 12px 28px !important;
+				font-size: 16px !important;
+				font-weight: 600 !important;
+				border-radius: 6px !important;
+				transition: all 0.3s ease;
+				box-shadow: none !important;
+			}
+
+			// Primary Button (usually the first one)
+			&:first-child .wp-block-button__link {
+				background-color: #006FE3 !important;
+				color: #ffffff !important;
+				border: none !important;
+
+				&:hover {
+					background-color: #005bbd !important;
+					box-shadow: 0 8px 20px rgba(0, 111, 230, 0.25) !important;
+					transform: translateY(-2px);
+				}
+			}
+
+			// Secondary Button
+			&:last-child .wp-block-button__link {
+				background-color: #ffffff !important;
+				color: #051630 !important;
+				border: 1px solid #d7e2ed !important;
+
+				&:hover {
+					background-color: #f8fafc !important;
+					border-color: #cbd5e1 !important;
+					transform: translateY(-2px);
+				}
+			}
+		}
+	}
+
+	// Illustration container
+	.wp-block-image,
+	.hero-illustration {
+		position: relative;
+		margin: 0 !important;
+		
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: 40px !important;
+			background: rgba(223, 242, 255, 0.5) !important;
+			padding: 10px !important;
+			box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05) !important;
+		}
+	}
+}

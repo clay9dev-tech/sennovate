@@ -1,0 +1,7 @@
+.has-soft-box-shadow {
+	@include soft-box-shadow;
+}
+
+.has-hard-box-shadow {
+	@include hard-box-shadow;
+}

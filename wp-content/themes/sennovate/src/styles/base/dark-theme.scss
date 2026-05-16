@@ -1,0 +1,24 @@
+@mixin dark-mode {
+	--wp--custom--colors--body: var(--wp--preset--color--white);
+	--wp--custom--colors--heading: var(--wp--custom--colors--dark--heading);
+	--wp--custom--colors--heading-em: var(--wp--custom--colors--dark--heading-em);
+	--wp--custom--colors--link: var(--wp--custom--colors--dark--link);
+	--wp--custom--colors--link-hover: var(--wp--custom--colors--dark--link-hover);
+	--wp--custom--colors--text-button: var(--wp--custom--colors--dark--text-button);
+	--wp--custom--colors--text-button-hover: var(--wp--custom--colors--dark--text-button-hover);
+	--wp--custom--colors--border: var(--wp--custom--colors--dark--border);
+	--wp--custom--colors--body-bg: var(--wp--preset--color--black);
+	--wp--custom--colors--shaded-bg: var(--wp--custom--colors--dark--shaded-bg);
+	--wp--custom--colors--input-bg: var(--wp--custom--colors--dark--input-bg);
+	--wp--custom--colors--button: var(--wp--custom--colors--dark--button);
+	--wp--custom--colors--button-hover: var(--wp--custom--colors--dark--button-hover);
+	--wp--custom--colors--button-bg: var(--wp--custom--colors--dark--button-bg);
+	--wp--custom--colors--button-bg-hover: var(--wp--custom--colors--dark--button-bg-hover);
+
+	background-color: var(--wp--custom--colors--body-bg);
+	color: var(--wp--custom--colors--body);
+}
+
+.is-style-dark {
+	@include dark-mode;
+}

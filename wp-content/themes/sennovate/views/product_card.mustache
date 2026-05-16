@@ -1,0 +1,28 @@
+
+
+  <div class="product-card {{ class }} {{add_padding}}">
+
+    <div class="image">
+      {{{ image }}}
+    </div>
+
+    <div class="content">
+      {{#title}}
+        <h2 class="title">{{{ . }}}</h2>
+      {{/title}}
+
+      {{#content}}
+        <p class="description">
+          {{{ . }}}
+        </p>
+      {{/content}}
+
+      <ul class="icon-list">{{#icon_list}}<li>{{#product_list_icon}}<img src="{{{.}}}" />{{/product_list_icon}} {{#product_list_name}}<span>{{{.}}}</span>{{/product_list_name}}</li>{{/icon_list}}</ul>
+
+    <div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+      <div class="wp-block-button is-style-text-arrow"><a href="{{{href}}}" class="wp-block-button__link wp-element-butto link">{{cta}}</a></div>
+    </div>
+
+    </div>
+
+  </div>

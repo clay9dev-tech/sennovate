@@ -1,0 +1,169 @@
+/*   Header
+    --------------------------------------------------------------------------  */
+
+:root {
+	/* stylelint-disable length-zero-no-unit */
+	/**
+	 * Not sure if it's calc(), var(), or the combination, but without the px
+	 * the "+ 0" doesn't work when combining the admin bar height with the
+	 * header height
+	 */
+	--admin-bar-height: 0px;
+	/* stylelint-enable length-zero-no-unit */
+	--header-height: 62px;
+
+	@include respond-to('navigation') {
+		--header-height: 108px;
+	}
+}
+
+.admin-bar {
+	--admin-bar-height: 46px;
+
+	@include respond-to(783px) {
+		--admin-bar-height: 32px;
+	}
+}
+
+.header {
+	@include side-padding;
+	--logo-height: 16px;
+	z-index: z('header');
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: var(--header-height);
+	transition: all 0.2s ease-in-out;
+	gap: 8px;
+
+	.header-content {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		max-width: var(--wp--custom--container-width--xwide);
+		margin-inline: auto;
+		gap: var(--wp--custom--gutter-width--page);
+	}
+
+	.wp-block-site-logo {
+		margin-block: 8px;
+		height: 100%;
+		max-height: 60px;
+
+		a {
+			display: block;
+			height: 100%;
+		}
+
+		svg,
+		img {
+			width: auto;
+			height: 100%;
+		}
+	}
+
+	.menus {
+		display: grid;
+		grid-template-areas: 'search utility' 'nav nav';
+		grid-template-columns: 1fr auto;
+		gap: var(--wp--preset--spacing--20);
+	}
+
+	@include respond-to($navigation - 1px, 'max') {
+		.menus {
+			--nav-height: calc(100vh - var(--header-height));
+
+			position: absolute;
+			padding-block: var(--wp--custom--gutter-width--page) calc(2 * var(--wp--custom--gutter-width--page));
+			top: var(--header-height);
+			left: 0;
+			display: flex;
+			flex-direction: column-reverse;
+			justify-content: flex-end;
+			width: 100%;
+			height: var(--nav-height);
+			clip-path: inset(0 0 var(--nav-height) 0);
+			background-color: var(--wp--custom--colors--body-bg);
+			color: var(--wp--custom--colors--body);
+			transition: clip-path 0.3s ease-out;
+			pointer-events: none;
+			gap: var(--wp--custom--gutter-width--page);
+
+			@at-root .nav-open & {
+				clip-path: inset(0 0 0 0);
+				pointer-events: all;
+			}
+		}
+	}
+
+	@include respond-to('navigation') {
+		.menu.utility-menu {
+			justify-content: flex-end;
+		}
+
+		.utility-menu {
+			grid-area: utility;
+		}
+
+		.header-search {
+			grid-area: search;
+		}
+
+		.main-nav {
+			grid-area: nav;
+		}
+	}
+}
+
+.main-menu-toggle {
+	position: relative;
+	margin-left: var(--wp--custom--gutter-width--page);
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+	color: inherit;
+	appearance: none;
+
+	@include respond-to('navigation') {
+		display: none;
+	}
+
+	.hamburger {
+		position: relative;
+
+		.top-bun {
+			transform: translate(0, -7.5px) rotate(0);
+		}
+
+		.bottom-bun {
+			transform: translate(0, 7.5px) rotate(0);
+		}
+	}
+
+	line {
+		transform-origin: center;
+		transition: all 0.25s ease-out;
+		stroke-width: 2px;
+		stroke: currentColor;
+		will-change: opacity, transform;
+	}
+
+	.nav-open & {
+		.top-bun {
+			transform: translate(0, 0) rotate(135deg);
+		}
+
+		.burger {
+			opacity: 0;
+		}
+
+		.bottom-bun {
+			transform: translate(0, 0) rotate(-135deg);
+		}
+
+	}
+}

@@ -1,0 +1,92 @@
+//stylelint-disable all
+.partner-card {
+
+	.partner-card-section {
+		padding: clamp(2.5rem, 0.714rem + 4.762vw, 5rem) 0;
+		height: 100%;
+
+		.wp-block-cover__background {
+			background: transparent;
+		}
+	}
+
+	@include respond-to($medium, max) {
+		.wp-block-cover__inner-container {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+	}
+
+	.partner-content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		max-width: 900px;
+		height: 650px;
+		margin: 0 auto;
+
+		@include respond-to($medium, max) {
+			height: 100%;
+			max-width: 100%;
+			padding: 0px;
+		}
+
+		.wp-block-heading {
+			color: #1a1d1f;
+		}
+		p {
+			color: #596066;
+		}
+	}
+
+	.partner-logo {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		width: 98px;
+		height: 90px;
+		padding: 20px;
+		border-radius: 20px;
+		box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+		background: #F2F5FA;
+		transition: transform 0.3s ease;
+		object-fit: contain;
+
+		@include respond-to($medium, max) {
+			position: relative !important;
+			left: auto !important;
+			top: auto !important;
+			right: auto !important;
+			bottom: auto !important;
+			margin: 0 auto;
+		}
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	@include respond-to($medium, max) {
+		.partner-images {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+			gap: 20px;
+			margin-top: 3rem;
+			padding: 0;
+		}
+	}
+
+	/* Position each logo */
+	.top-left      { top: 40px; left: 25%; }
+	.top-center    { top: 30px; left: 50%; }
+	.top-right     { top: 50px; right: 15%; }
+
+	.mid-left      { top: 30%; left: 5%; }
+	.mid-right     { top: 30%; right: 5%; }
+
+	.bottom-left   { bottom: 20%; left: 8%; }
+	.bottom-center { bottom: 10%; left: 25%; }
+	.bottom-right  { right: 15%; bottom: 10%; }
+
+}

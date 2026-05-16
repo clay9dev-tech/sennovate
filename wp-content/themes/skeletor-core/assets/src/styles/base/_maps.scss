@@ -1,0 +1,40 @@
+/*   Maps
+	--------------------------------------------------------------------------  */
+
+/**
+ * Breakpoints
+ */
+$xsmall: 480px;
+$small: 600px;
+$medium: 800px;
+$navigation: 800px;
+$large: 1024px;
+$xlarge: 1280px;
+$breakpoints: (
+	'xsmall': $xsmall,
+	'small': $small,
+	'medium': $medium,
+	'navigation': $navigation,
+	'large': $large,
+	'xlarge': $xlarge,
+);
+
+$column_stack_breakpoint: $medium;
+/**
+ * Z-indices
+ */
+
+$z-index: (
+	'mount-everest': 99999,
+	'overlay-content': 80,
+	'overlay': 70,
+	'main-menu-sub': 60,
+	'header-nav': 60,
+	'header': 80,
+	'block-content-floating': 40,
+	'block-content': 30,
+	'block': 20,
+	'body': 10,
+	'container': 5,
+	'botomless-pit': -99999,
+);

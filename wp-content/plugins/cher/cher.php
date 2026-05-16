@@ -1,0 +1,39 @@
+<?php
+/*
+ * Plugin Name: Cher
+ * Plugin URI:  https://wordpress.com
+ * Version:     2.1
+ * Description: Easy management of social profiles and social share links for developers.
+ * Author:      WordPress
+ * Author URI:  https://wordpress.com
+ * Text Domain: cher
+ * Requires at least: 4.0
+ * Tested up to: 6.3.1
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+// Load plugin class files
+require_once( 'includes/class-plugin.php' );
+require_once( 'includes/class-settings.php' );
+
+// Load plugin libraries
+require_once( 'includes/lib/class-admin-api.php' );
+
+// Load public plugin functions
+require_once( 'public/functions.php' );
+
+/**
+ * Returns the main instance of the plugin to prevent the need to use globals.
+ */
+function Cher() {
+	$instance = Cher_Plugin_Template::instance( __FILE__, '1.0.0' );
+
+	if ( is_null( $instance->settings ) ) {
+		$instance->settings = Cher_Settings::instance( $instance );
+	}
+
+	return $instance;
+}
+
+Cher();

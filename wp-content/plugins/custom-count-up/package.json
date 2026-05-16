@@ -1,0 +1,17 @@
+{
+	"name": "skeletor-count-up",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "npx wp-scripts start",
+		"build": "npx wp-scripts build"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@wordpress/scripts": "^26.6.0",
+		"animejs": "^3.2.1"
+	}
+}
