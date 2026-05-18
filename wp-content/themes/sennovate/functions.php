@@ -39,6 +39,11 @@ require_once $blocks . '/sennovate-feature-grid.php';
 require_once $blocks . '/sennovate-strike-team.php';
 require_once $blocks . '/sennovate-engagement-models.php';
 require_once $blocks . '/sennovate-faq-section.php';
+require_once $blocks . '/sennovate-add-value.php';
+require_once $blocks . '/sennovate-built-to-perform.php';
+require_once $blocks . '/sennovate-fully-connected.php';
+require_once $blocks . '/sennovate-keep-safe.php';
+require_once $blocks . '/sennovate-reasons-grid.php';
 
 /**
  * ACF JSON Sync

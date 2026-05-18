@@ -284,6 +284,7 @@ function sennovate_render_page_hero_callback( $block, $content = '', $is_preview
 				text-align: center;
 				max-width: 800px;
 				margin: 0 auto;
+				    justify-content: center;
 			}
 
 			/* Split Layout */
@@ -296,19 +297,20 @@ function sennovate_render_page_hero_callback( $block, $content = '', $is_preview
 			.hero-image-col { flex: 1; }
 
 			/* Typography */
-			.hero-label {
-				font-family: 'Inter', sans-serif;
-				font-size: 14px;
-				font-weight: 500;
-				text-transform: uppercase;
-				letter-spacing: 1px;
-				margin-bottom: 20px;
-				opacity: 0.9;
-				display: flex;
-				align-items: center;
-				justify-content: inherit;
-				gap: 10px;
-			}
+.hero-label {
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: inherit;
+    gap: 10px;
+    color: var(--Sennovate-white, #FFF);
+    font-family: var(--sennovate-medium-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+}
 			.hero-label::before {
 				content: '';
 				width: 8px;
@@ -333,7 +335,7 @@ function sennovate_render_page_hero_callback( $block, $content = '', $is_preview
 				font-size: clamp(16px, 2vw, 20px) !important;
 				line-height: 1.5 !important;
 				margin-bottom: 40px !important;
-				max-width: 600px;
+				max-width: 685px;
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -344,11 +346,13 @@ function sennovate_render_page_hero_callback( $block, $content = '', $is_preview
     color: var(--sennovate-dark-blue) !important;
     padding: 10px 24px !important;
     border-radius: 6px !important;
-    font-weight: 600 !important;
-    font-size: 15px !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
     text-decoration: none !important;
     display: inline-block;
     transition: all 0.3s ease;
+	line-height: 120% !important;
+	font-family: var(--font-satoshi-bold);
 }
 			.btn-primary-white:hover {
 				transform: translateY(-2px);

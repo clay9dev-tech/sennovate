@@ -349,6 +349,7 @@ header.header .utility-menu-wrapper {
   header.header {
     height: auto !important;
     padding: 10px 0 !important;
+    overflow: hidden;
   }
 
   header.header .header-content {
@@ -5391,4 +5392,32 @@ header.header .menus .menu-item-has-meganav .sub-menu {
     padding: 8px 12px !important;
     margin: 0 10px !important;
   }
+}
+
+/* Common Button Arrow Animation */
+.sennovate-btn-with-arrow,
+a.wp-block-button__link.hss__cta {
+  display: inline-flex;
+  align-items: center;
+}
+
+.sennovate-btn-with-arrow .arrow,
+a.wp-block-button__link.hss__cta .arrow {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+  height: 32px;
+}
+
+.sennovate-btn-with-arrow .arrow svg,
+a.wp-block-button__link.hss__cta .arrow svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.sennovate-btn-with-arrow:hover .arrow svg,
+a.wp-block-button__link.hss__cta:hover .arrow svg {
+  transform: translateX(5px);
 }
