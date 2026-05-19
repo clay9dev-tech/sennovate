@@ -4,6 +4,7 @@ $inc = sprintf('%s/includes', get_stylesheet_directory());
 $blocks = sprintf('%s/blocks', $inc);
 $blog_and_resource = sprintf('%s/blog-and-resource', $inc);
 $news_and_events = sprintf('%s/news-and-events', $inc);
+$partners = sprintf('%s/partners', $inc);
 
 require_once $inc . '/theme-options.php';
 require_once $inc . '/child_views.php';
@@ -17,6 +18,7 @@ require_once $inc . '/partner-logo.php';
 
 require_once $blog_and_resource . '/template.php';
 require_once $news_and_events . '/template.php';
+require_once $partners . '/template.php';
 
 require_once $blocks . '/post-card.php';
 require_once $blocks . '/signup-modal.php';
